@@ -1,0 +1,15 @@
+#Forum
+
+1. Thread
+2. Reply
+3. User
+
+A. Thread is created by a User
+B. A reply belongsto a thread, and belongs to a user.
+
+
+First class: 	Thread Migration, Controller and Model were created
+		Initial Database Setup
+		Reply Migration, Controller and Model were created
+		ThreadFactory created
+		ReplyFactory created
