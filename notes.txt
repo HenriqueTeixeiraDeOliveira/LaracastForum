@@ -17,6 +17,9 @@ First class:
 
 Second class:
                 1. ThreadTest created
+                    a. Test 1: a_user_can_view_all_threads()
+                    b. Test 2: a_user_can_read_a_single_thread()
+                    note: make sure to write /** @test */ before each test
                 2. Create a local testing environment in phpunit.xml (sqlite database without file, just memory)
                 3. Route '/threads' created
                 4. Controllers name changed for plural
@@ -26,3 +29,22 @@ Second class:
                 8. Route '/threads/{thread}' created
                 9. View threads.show created
                 *10. $thread->path shortcut (path function was created at Thread Model)
+
+Third class:
+                *0. Laracon - How dd() can be useful to work with testing (dd() commented at Thread Model)
+                1. Rename ThreadsTest to ReadThreadsTest
+                2. Create a need test inside "ReadThreadsTest"
+                    a. a_user_can_read_replies_that_are_associated_with_a_thread()
+                3. A setUp function was created to avoid create a Thread over and over
+                4. We can refectory it and get rid of the temporary variables "$response" and put everything inline.
+                5. View threads.show.blade.php changed. Show the replies for each thread on the screen.
+                6. Create a relationship between Thread and Replies on the Thread Model. !! One-to-many relationship !!
+                    a. A thread has many replies
+                    b. A reply belongs to a Thread.
+                7. ReplyTest created to ensure that the relationship between owner an reply does exist.
+                8. Create a relationship between Reply and User on the Reply Model. !! One-to-many relationship !!
+                    a. A User has many Replies
+                    b. A Reply belongs to an User.
+                9. Create a link to User's profile that will be created in the future
+
+
