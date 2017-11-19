@@ -25,3 +25,4 @@ Second class:
                 7. View index.threads created (I needed to use "composer dump-autoload" to show the page)
                 8. Route '/threads/{thread}' created
                 9. View threads.show created
+                *10. $thread->path shortcut (path function was created at Thread Model)

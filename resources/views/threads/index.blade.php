@@ -10,7 +10,7 @@
                     <div class="panel-body">
                         @foreach($threads as $thread)
                             <article>
-                                <a href="/threads/{{$thread->id }}">
+                                <a href="{{ $thread->path() }}">
                                     {{$thread->title }}
                                 </a>
                                 <div class="body">
