@@ -5,11 +5,23 @@
 3. User
 
 A. Thread is created by a User
-B. A reply belongsto a thread, and belongs to a user.
+B. A reply belongs to a thread, and belongs to a user.
 
 
-First class: 	Thread Migration, Controller and Model were created
-		Initial Database Setup
-		Reply Migration, Controller and Model were created
-		ThreadFactory created
-		ReplyFactory created
+First class:
+                1. Thread Migration, Controller and Model were created
+		        2. Initial Database Setup
+		        3. Reply Migration, Controller and Model were created
+		        4. ThreadFactory created
+		        5. ReplyFactory created
+
+Second class:
+                1. ThreadTest created
+                2. Create a local testing environment in phpunit.xml (sqlite database without file, just memory)
+                3. Route '/threads' created
+                4. Controllers name changed for plural
+                5. View threads.index created
+                6. Authentication scaffolding generated
+                7. View index.threads created (I needed to use "composer dump-autoload" to show the page)
+                8. Route '/threads/{thread}' created
+                9. View threads.show created
