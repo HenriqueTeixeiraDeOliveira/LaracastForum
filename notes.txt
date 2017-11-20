@@ -62,8 +62,15 @@ Forth class:
                     a. an_authenticated_user_may_participate_in_forum_threads()
                 6. Helper method path() used to simplify code at Test models
                 7. Route POST '/threads/{thread}/replies' created (RepliesControler@store)
-                8. store method was created at PepliesController
+                8. store method was created at RepliesController
                 9. addReply() was created at ThreadController
+
+Fifth class:
+                1. Create a Reply Form at threads.show.blade.php
+                2. Temporary padding.bottom at layouts.app
+                3. The name of the app was changed to Forum at config/app.php
+
+
 
 
 
