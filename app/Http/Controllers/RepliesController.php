@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class RepliesController extends Controller
 {
 
-    public function construct()
+    public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->only('store');
     }
 
     public function store(Thread $thread)

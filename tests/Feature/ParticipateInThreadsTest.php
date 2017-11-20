@@ -12,7 +12,9 @@ class ParticipateInThreadsTest extends TestCase
 //    function unauthenticated_users_may_not_add_replies()
 //    {
 //        $this->expectException('Illuminate\Auth\AuthenticationException');
-//        $this->post('/threads/1/replies', []);
+//        $thread = factory('App\Thread')->create();
+//        $reply = factory('App\Reply')->make();
+//        $this->post($thread->path() . '/replies', $reply->toArray());
 //    }
 
     /** @test */

@@ -70,8 +70,14 @@ Fifth class:
                 2. Temporary padding.bottom at layouts.app
                 3. The name of the app was changed to Forum at config/app.php
 
-
-
+Sixth class:
+                1. CreateThreadsTest created
+                    a. an_authenticated_user_can_create_new_forum_threads
+                    b. guests_may_not_create_threads
+                2. Test name changed:
+                    a. ParticipateInThreadsTest -> ThreadsController
+                3. Route POST'/threads' created (ThreadsController@store)
+                4. Forth Class Error was fixed
 
 
 
