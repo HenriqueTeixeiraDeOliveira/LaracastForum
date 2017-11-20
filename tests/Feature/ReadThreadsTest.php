@@ -3,13 +3,13 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Support\Facades\App;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ReadThreadsTest extends TestCase
 {
     use DatabaseMigrations;
+
+    protected $thread;
 
     public function setUp()
     {
@@ -30,7 +30,7 @@ class ReadThreadsTest extends TestCase
     public function a_user_can_read_a_single_thread()
     {
 
-        $this->get('/threads/' . $this->thread->id)
+        $this->get($this->thread->path())
              ->assertSee($this->thread->title);
     }
 
@@ -41,7 +41,7 @@ class ReadThreadsTest extends TestCase
         // And that thread includes replies (Done: We just generated one reply that is associated our thread)
         $reply = factory('App\Reply')->create(['thread_id' => $this->thread->id]);
 
-        $this->get('/threads/' . $this->thread->id)      // When we visit a thread page
+        $this->get($this->thread->path())      // When we visit a thread page
              ->assertSee($reply->body);                      //  Then we should see the replies.
 
     }

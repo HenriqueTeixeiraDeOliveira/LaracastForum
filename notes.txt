@@ -21,12 +21,14 @@ Second class:
                     b. Test 2: a_user_can_read_a_single_thread()
                     note: make sure to write /** @test */ before each test
                 2. Create a local testing environment in phpunit.xml (sqlite database without file, just memory)
-                3. Route '/threads' created
-                4. Controllers name changed for plural
+                3. Route GET '/threads' created (ThreadsController@index)
+                4. Controllers name changed for
+                    a. ThreadController -> ThreadsController
+                    b. ReplyController -> RepliesController
                 5. View threads.index created
                 6. Authentication scaffolding generated
                 7. View index.threads created (I needed to use "composer dump-autoload" to show the page)
-                8. Route '/threads/{thread}' created
+                8. Route GET '/threads/{thread}' created (ThreadsController@show)
                 9. View threads.show created
                 *10. $thread->path shortcut (path function was created at Thread Model)
 
@@ -42,9 +44,28 @@ Third class:
                     a. A thread has many replies
                     b. A reply belongs to a Thread.
                 7. ReplyTest created to ensure that the relationship between owner an reply does exist.
-                8. Create a relationship between Reply and User on the Reply Model. !! One-to-many relationship !!
+                8. Create a relationship (public function owner()) between Reply and User on the Reply Model. !! One-to-many relationship !!
                     a. A User has many Replies
                     b. A Reply belongs to an User.
                 9. Create a link to User's profile that will be created in the future
+
+Forth class:
+                1. View threads.reply created for the reply HTML (code was extracted from threads.show)
+                2. Add 'protected $thread;' on ReadThreadsTest
+                3. ThreadTest created
+                    a. a_thread_has_replies()       To make sure the relationship returns the proper collection
+                    b. a_thread_has_a_creator()
+                4.Create a relationship (public function creator()) between a Thread and User on the Thread Model !! One-to-many relationship !!
+                    a. An User has many Threads
+                    b. A Thread belongs to an User
+                5. ParticipateInForumTest created
+                    a. an_authenticated_user_may_participate_in_forum_threads()
+                6. Helper method path() used to simplify code at Test models
+                7. Route POST '/threads/{thread}/replies' created (RepliesControler@store)
+                8. store method was created at PepliesController
+                9. addReply() was created at ThreadController
+
+
+
 
 
