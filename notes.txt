@@ -55,7 +55,7 @@ Forth class:
                 3. ThreadTest created
                     a. a_thread_has_replies()       To make sure the relationship returns the proper collection
                     b. a_thread_has_a_creator()
-                4.Create a relationship (public function creator()) between a Thread and User on the Thread Model !! One-to-many relationship !!
+                4. Create a relationship (public function creator()) between a Thread and User on the Thread Model !! One-to-many relationship !!
                     a. An User has many Threads
                     b. A Thread belongs to an User
                 5. ParticipateInForumTest created
@@ -78,6 +78,15 @@ Sixth class:
                     a. ParticipateInThreadsTest -> ThreadsController
                 3. Route POST'/threads' created (ThreadsController@store)
                 4. Forth Class Error was fixed
+
+Seventh class:
+                1. Update composer's autoload -> Tests/Utilities/functions.php
+                2. Testing helpers file "function.php" created
+                    a. create
+                    b. make
+                3. SignIn() method created at TestCase.php
+                4. Snippet created for "testclass"
+
 
 
 
