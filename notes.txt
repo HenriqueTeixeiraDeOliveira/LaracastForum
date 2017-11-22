@@ -87,6 +87,16 @@ Seventh class:
                 3. SignIn() method created at TestCase.php
                 4. Snippet created for "testclass"
 
+Octave class:   1. Route GET'/threads.create' created (ThreadsController@create)
+                2. Update all the Threads Routes to Route::resource('threads','ThreadsController')
+                3. Create a Thread Form at threads.create.blade.php
+                4. View threads.create created
+                5. Middleware at ThreadsController changed.
+                6. Create a new test at CreateThreadsTest
+                    a. guests_cannot_see_the_create_thread_page
+                7. TestCase.php was changed to enable us to do test with and without Exceptions
+                8. Get rid of the previous modification at Handler.php (if (app()->environment() === 'testing') throw $exception);
+                *Now you can use ExceptionHandler() when you do not want to throw a Exception.
 
 
 
