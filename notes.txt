@@ -56,7 +56,7 @@ Forth class:
                     a. a_thread_has_replies()       To make sure the relationship returns the proper collection
                     b. a_thread_has_a_creator()
                 4. Create a relationship (public function creator()) between a Thread and User on the Thread Model !! One-to-many relationship !!
-                    a. An User has many Threads
+                    a. A User has many Threads
                     b. A Thread belongs to an User
                 5. ParticipateInForumTest created
                     a. an_authenticated_user_may_participate_in_forum_threads()
@@ -98,6 +98,26 @@ Octave class:   1. Route GET'/threads.create' created (ThreadsController@create)
                 8. Get rid of the previous modification at Handler.php (if (app()->environment() === 'testing') throw $exception);
                 *Now you can use ExceptionHandler() when you do not want to throw a Exception.
 
+Ninth Class:    1. Merging two Tests that do similar actions, we are going to keep the name "guests_may_not_create_threads"
+                    a. guests_may_not_create_threads
+                    b. guests_cannot_see_the_create_thread_page
+                2. Channel Model was created
+                3. Channel Migration was created
+                4. Create a relationship (public function channel()) between a Thread and Channel on the Thread Model !! One-to-many relationship !!
+                    a. A Channel has many Threads
+                    b. A Thread belongs to an Channel
+                5. Add a 'channel_id' field at thread migration table
+                6. Merge all the Factories into a single file: ModelFactory.php
+                    a. User Factory
+                    b. Thread Factory
+                    c. Reply Factory
+                7. Create the Channel Factory at ModelFactory.php
+                8. Build Channel table at Channels migration file.
+                9. Update the "store" method to be able to add the 'channel_id' into the database
+                10. Update the "path()" method
+                11. Update the routes to include the channel path
+                12. Update ParticipateInThreadsTest method
+                    a. unauthenticated_users_may_not_add_replies
 
 
 
