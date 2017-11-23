@@ -119,5 +119,11 @@ Ninth Class:    1. Merging two Tests that do similar actions, we are going to ke
                 12. Update ParticipateInThreadsTest method
                     a. unauthenticated_users_may_not_add_replies
 
+Ninth Class(2): 1. A ERROR at function.php was fixed. The make method was wrong.
+                2. A ERROR at CreateThreadsTest.php was fixed.
+
+
+
+
 
 
