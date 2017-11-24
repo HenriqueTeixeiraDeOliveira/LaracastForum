@@ -8,14 +8,14 @@ A. Thread is created by a User
 B. A reply belongs to a thread, and belongs to a user.
 
 
-First class:
+First Lesson:
                 1. Thread Migration, Controller and Model were created
 		        2. Initial Database Setup
 		        3. Reply Migration, Controller and Model were created
 		        4. ThreadFactory created
 		        5. ReplyFactory created
 
-Second class:
+Second Lesson:
                 1. ThreadTest created
                     a. Test 1: a_user_can_view_all_threads()
                     b. Test 2: a_user_can_read_a_single_thread()
@@ -32,7 +32,7 @@ Second class:
                 9. View threads.show created
                 *10. $thread->path shortcut (path function was created at Thread Model)
 
-Third class:
+Third Lesson:
                 *0. Laracon - How dd() can be useful to work with testing (dd() commented at Thread Model)
                 1. Rename ThreadsTest to ReadThreadsTest
                 2. Create a need test inside "ReadThreadsTest"
@@ -49,7 +49,7 @@ Third class:
                     b. A Reply belongs to an User.
                 9. Create a link to User's profile that will be created in the future
 
-Forth class:
+Forth Lesson:
                 1. View threads.reply created for the reply HTML (code was extracted from threads.show)
                 2. Add 'protected $thread;' on ReadThreadsTest
                 3. ThreadTest created
@@ -65,12 +65,12 @@ Forth class:
                 8. store method was created at RepliesController
                 9. addReply() was created at ThreadController
 
-Fifth class:
+Fifth Lesson:
                 1. Create a Reply Form at threads.show.blade.php
                 2. Temporary padding.bottom at layouts.app
                 3. The name of the app was changed to Forum at config/app.php
 
-Sixth class:
+Sixth Lesson:
                 1. CreateThreadsTest created
                     a. an_authenticated_user_can_create_new_forum_threads
                     b. guests_may_not_create_threads
@@ -79,7 +79,7 @@ Sixth class:
                 3. Route POST'/threads' created (ThreadsController@store)
                 4. Forth Class Error was fixed
 
-Seventh class:
+Seventh Lesson:
                 1. Update composer's autoload -> Tests/Utilities/functions.php
                 2. Testing helpers file "function.php" created
                     a. create
@@ -87,7 +87,7 @@ Seventh class:
                 3. SignIn() method created at TestCase.php
                 4. Snippet created for "testclass"
 
-Octave class:   1. Route GET'/threads.create' created (ThreadsController@create)
+Octave Lesson:   1. Route GET'/threads.create' created (ThreadsController@create)
                 2. Update all the Threads Routes to Route::resource('threads','ThreadsController')
                 3. Create a Thread Form at threads.create.blade.php
                 4. View threads.create created
@@ -98,7 +98,8 @@ Octave class:   1. Route GET'/threads.create' created (ThreadsController@create)
                 8. Get rid of the previous modification at Handler.php (if (app()->environment() === 'testing') throw $exception);
                 *Now you can use ExceptionHandler() when you do not want to throw a Exception.
 
-Ninth Class:    1. Merging two Tests that do similar actions, we are going to keep the name "guests_may_not_create_threads"
+Ninth Lesson:
+                1. Merging two Tests that do similar actions, we are going to keep the name "guests_may_not_create_threads"
                     a. guests_may_not_create_threads
                     b. guests_cannot_see_the_create_thread_page
                 2. Channel Model was created
@@ -119,10 +120,11 @@ Ninth Class:    1. Merging two Tests that do similar actions, we are going to ke
                 12. Update ParticipateInThreadsTest method
                     a. unauthenticated_users_may_not_add_replies
 
-Ninth Class(2): 1. A ERROR at function.php was fixed. The make method was wrong.
+Ninth Lesson(2):
+                1. A ERROR at function.php was fixed. The make method was wrong.
                 2. A ERROR at CreateThreadsTest.php was fixed.
 
-Tenth Class:    1. Create a new test at CreateThreadsTest
+Tenth Lesson:    1. Create a new test at CreateThreadsTest
                     a. a_thread_requires_a_title
                     b. a_thread_requires_a_body
                     c. a_thread_requires_a_valid_channel
@@ -132,7 +134,8 @@ Tenth Class:    1. Create a new test at CreateThreadsTest
                 5. Create a new test at ParticipationThreadsTest
                     a. a_reply_requires_a_body
 
-Eleventh Class: 1. Create a new test at ReadThreads
+Eleventh Lesson:
+                1. Create a new test at ReadThreads
                     a. a_user_can_filter_threads_according_to_a_tag
                 2. Route GET '/threads/{channel}' added at (ThreadsController@index)
                 3. Change the index method at ThreadsController
@@ -146,14 +149,20 @@ Eleventh Class: 1. Create a new test at ReadThreads
                 8. Edit layouts.app to create a dropdown with all the channels
                 9. Generate and Update DocBlocks.
 
-Twelfth Class:  1. Update layouts.app view: include a "New Thread" tab at the navbar
+Twelfth Lesson:
+                1. Update layouts.app view: include a "New Thread" tab at the navbar
                 2. Update threads.create view: show errors after submit a form
                 3. It is possible to create a new Thread right now.
 
-Thirteenth Class:   1. Change the channel query to AppServiceProvider.php
-                    2. Views "threads.create" and "layouts.app" were changed
+Thirteenth Lesson:
+                1. Change the channel query to AppServiceProvider.php
+                2. Views "threads.create" and "layouts.app" were changed
 
-
+Fourteenth Lesson:
+                1. Create a new test at ReadThreadsTest
+                    a. a_user_can_filter_threads_by_any_username
+                2. Threads Controller changed to make sure it is possible to filter by username
+                3. Update layouts.app to make sure you can filter your own threads
 
 
 
