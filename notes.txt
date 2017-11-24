@@ -150,6 +150,8 @@ Twelfth Class:  1. Update layouts.app view: include a "New Thread" tab at the na
                 2. Update threads.create view: show errors after submit a form
                 3. It is possible to create a new Thread right now.
 
+Thirteenth Class:   1. Change the channel query to AppServiceProvider.php
+                    2. Views "threads.create" and "layouts.app" were changed
 
 
 
