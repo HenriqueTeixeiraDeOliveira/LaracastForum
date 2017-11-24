@@ -122,6 +122,15 @@ Ninth Class:    1. Merging two Tests that do similar actions, we are going to ke
 Ninth Class(2): 1. A ERROR at function.php was fixed. The make method was wrong.
                 2. A ERROR at CreateThreadsTest.php was fixed.
 
+Tenth Class:    1. Create a new test at CreateThreadsTest
+                    a. a_thread_requires_a_title
+                    b. a_thread_requires_a_body
+                    c. a_thread_requires_a_valid_channel
+                2. Add validation rules at ThreadController
+                3. Helper function "publishThread" was created
+                4. Add validation rules at RepliesController
+                5. Create a new test at ParticipationThreadsTest
+                    a. a_reply_requires_a_body
 
 
 
