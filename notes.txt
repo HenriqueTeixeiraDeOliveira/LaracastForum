@@ -132,7 +132,19 @@ Tenth Class:    1. Create a new test at CreateThreadsTest
                 5. Create a new test at ParticipationThreadsTest
                     a. a_reply_requires_a_body
 
-
+Eleventh Class: 1. Create a new test at ReadThreads
+                    a. a_user_can_filter_threads_according_to_a_tag
+                2. Route GET '/threads/{channel}' added at (ThreadsController@index)
+                3. Change the index method at ThreadsController
+                4. Change the default primary key to 'slug' at Channel.php
+                5. ChannelTest.php created
+                    a.
+                6. Create a relationship (public function threads()) between a Thread and Channel on the Thread Model !! One-to-many relationship !!
+                    a. A Channel has many Threads
+                    b. A Thread belongs to an Channel
+                7. Reorganize the Routes order at web.php to make sure "create" is not confuse with {channel}
+                8. Edit layouts.app to create a dropdown with all the channels
+                9. Generate and Update DocBlocks.
 
 
 

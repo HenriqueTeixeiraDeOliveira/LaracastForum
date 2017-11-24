@@ -19,7 +19,7 @@ class ReadThreadsTest extends TestCase
     }
 
     /** @test */
-    public function a_user_can_view_all_threads()
+    function a_user_can_view_all_threads()
     {
         //dd($this->thread);
         $this->get('/threads')
@@ -27,7 +27,7 @@ class ReadThreadsTest extends TestCase
     }
 
     /** @test */
-    public function a_user_can_read_a_single_thread()
+    function a_user_can_read_a_single_thread()
     {
 
         $this->get($this->thread->path())
@@ -35,7 +35,7 @@ class ReadThreadsTest extends TestCase
     }
 
     /** @test */
-    public function a_user_can_read_replies_that_are_associated_with_a_thread()
+    function a_user_can_read_replies_that_are_associated_with_a_thread()
     {
         // Given we have a thread (Done: Since we define a setUp function, we already have it.)
         // And that thread includes replies (Done: We just generated one reply that is associated our thread)
@@ -45,4 +45,19 @@ class ReadThreadsTest extends TestCase
              ->assertSee($reply->body);                      //  Then we should see the replies.
 
     }
+
+    /** @test */
+    function a_user_can_filter_threads_according_to_a_channel()
+    {
+        $channel = create('App\Channel');
+        $threadInChannel = create('App\Thread', ['channel_id' => $channel->id]);
+        $threadNotInChannel = create('App\Thread');
+
+        //dd ($channel, $threadInChannel, $threadNotInChannel);
+
+        $this->get('/threads/' . $channel->slug)
+             ->assertSee($threadInChannel->title)
+             ->assertDontSee($threadNotInChannel->title);
+    }
+
 }
