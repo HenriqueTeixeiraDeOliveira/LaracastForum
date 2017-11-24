@@ -146,5 +146,22 @@ Eleventh Class: 1. Create a new test at ReadThreads
                 8. Edit layouts.app to create a dropdown with all the channels
                 9. Generate and Update DocBlocks.
 
+Twelfth Class:  1. Update layouts.app view: include a "New Thread" tab at the navbar
+                2. Update threads.create view: show errors after submit a form
+                3. It is possible to create a new Thread right now.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+* How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 
