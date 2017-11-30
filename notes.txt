@@ -165,8 +165,10 @@ Fourteenth Lesson:
                 3. Update layouts.app to make sure you can filter your own threads
 
 
-
-
+Sixteenth Lesson:
+                1. Change threads.show to add a side bar and pagination
+                2. Add Global Query Scope at Thread.php class to always get the number of replies associated with
+                3. Change ThreadsController to pass the replies in a way that you can use pagination
 
 
 
