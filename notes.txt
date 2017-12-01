@@ -170,6 +170,13 @@ Sixteenth Lesson:
                 2. Add Global Query Scope at Thread.php class to always get the number of replies associated with
                 3. Change ThreadsController to pass the replies in a way that you can use pagination
 
+Seventeenth Lesson:
+                1. Change threads.index to add the number of replies in each post
+                2. Change app.layout to define style attributes and the popular nav
+                3. Update the create and make function to be able to specify the number that needs to be generated
+                4. Change index method at ThreadsController to return json if necessary.
+                4. Create popular filter at ThreadsFilters
+
 
 
 

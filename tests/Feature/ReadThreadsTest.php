@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
+use Carbon\Carbon;
 
 class ReadThreadsTest extends TestCase
 {
@@ -73,6 +74,26 @@ class ReadThreadsTest extends TestCase
              ->assertSee($threadByJohn->title)
              ->assertDontSee($threadNotByJohn->title);
 
+    }
+
+    /** @test */
+    function a_user_can_filter_threads_by_popularity()
+    {
+        //Given we have three threads
+
+        $threadWithTwoReplies = create('App\Thread', ['created_at' => new Carbon('-2 minute')]);
+        create('App\Reply', ['thread_id' => $threadWithTwoReplies->id], 2);
+
+        $threadWithThreeReplies = create('App\Thread', ['created_at' => new Carbon('-1 minute')]);
+        create('App\Reply', ['thread_id' => $threadWithThreeReplies->id], 3);
+
+        $threadWithNoReplies = $this->thread;
+
+
+
+        $response = $this->getJson('threads?popular=1')->json();
+
+        $this->assertEquals([3,2,0], array_column($response,'replies_count'));
     }
 
 
