@@ -27,4 +27,19 @@ class Reply extends Model
         //return $this->belongsTo(User::class);
         //To use the command like this, the public function's name has to be user
     }
+
+    public function favorites()
+    {
+        return $this->morphMany(Favorite::class, 'favorited'); //You should check the name at migration file '$table->unsignedInteger('favorited_id');'
+    }
+
+    public function favorite()
+    {
+        $attributes = ['user_id' => auth()->id()];
+
+        if (!$this->favorites()->where($attributes)->exists())
+        {
+            return $this->favorites()->create($attributes);
+        }
+    }
 }

@@ -177,6 +177,17 @@ Seventeenth Lesson:
                 4. Change index method at ThreadsController to return json if necessary.
                 4. Create popular filter at ThreadsFilters
 
+Eighteenth Lesson:
+                1. Add a FavoritesTest to be able to verify if the user can reply any thread just once.
+                    a. guests_can_not_favorite_anything
+                    b. an_authenticated_user_can_favorite_any_reply
+                    c. an_authenticated_user_may_only_favorite_a_reply_once
+                2. Create a new route for the post request "/replies/{reply}/favorites"
+                3. Create a new controller to define the post method
+                4. Create migration to create our pivot table
+                5. Create model "Favorite"
+
+
 
 
 
