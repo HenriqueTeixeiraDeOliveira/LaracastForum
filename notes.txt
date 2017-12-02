@@ -187,6 +187,11 @@ Eighteenth Lesson:
                 4. Create migration to create our pivot table
                 5. Create model "Favorite"
 
+Nineteenth Lesson:
+                1. Change "threads.reply" to add the favorite button
+                2. Create the "isFavorite" method to disable the button for the user that have already favorite the reply
+                3. Change FavoritesController to return back to the previous page
+
 
 
 
