@@ -155,7 +155,7 @@ Twelfth Lesson:
                 3. It is possible to create a new Thread right now.
 
 Thirteenth Lesson:
-                1. Change the channel query to AppServiceProvider.php
+                1. Change the channel query to AppServiceProvider.php at boot method
                 2. Views "threads.create" and "layouts.app" were changed
 
 Fourteenth Lesson:
@@ -192,7 +192,13 @@ Nineteenth Lesson:
                 2. Create the "isFavorite" method to disable the button for the user that have already favorite the reply
                 3. Change FavoritesController to return back to the previous page
 
-
+Twentieth Lesson:
+                1. Install Laravel Debugbar (https://github.com/barryvdh/laravel-debugbar/tree/2.4)
+                2. Change the register method at AppServiceProvider to add the bar when the application is running in a local environment
+                3. Change "getThreads" at ThreadsController to reduce the number of path method queries
+                4. Change boot method at AppServiceProvider to reduce the number of channel queries
+                5. Change "threads.reply" view to reduce the number of queries
+                6. Change replies() method at "Thread.php" to decrease the number of queries at "threads.reply"
 
 
 
