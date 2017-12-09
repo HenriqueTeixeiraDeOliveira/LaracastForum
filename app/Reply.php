@@ -6,13 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reply extends Model
 {
-
+    use Favoritable;
     /**
      * Don't auto-apply mass assignment protection.
      *
      * @var array
      */
     protected $guarded = [];
+
+    protected $with = ['owner','favorites'];
 
     /**
      * A reply has an owner.
@@ -28,23 +30,4 @@ class Reply extends Model
         //To use the command like this, the public function's name has to be user
     }
 
-    public function favorites()
-    {
-        return $this->morphMany(Favorite::class, 'favorited'); //You should check the name at migration file '$table->unsignedInteger('favorited_id');'
-    }
-
-    public function favorite()
-    {
-        $attributes = ['user_id' => auth()->id()];
-
-        if (! $this->favorites()->where($attributes)->exists())
-        {
-            return $this->favorites()->create($attributes);
-        }
-    }
-
-    public function isFavorited()
-    {
-        return $this->favorites()->where('user_id',auth()->id())->exists();
-    }
 }

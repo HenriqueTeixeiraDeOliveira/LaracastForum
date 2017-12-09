@@ -200,7 +200,13 @@ Twentieth Lesson:
                 5. Change "threads.reply" view to reduce the number of queries
                 6. Change replies() method at "Thread.php" to decrease the number of queries at "threads.reply"
 
-
+Twenty-first Lesson:
+                1. Change the Reply model to always load the owner (User) who created the reply to avoid unnecessary queries.
+                2. Change the Thread model to always load the creator (User) who created the thread to avoid unnecessary queries
+                3. Add a custom getter (getFavoritesCountAttribute) at the Reply model to be able to count the number of favorites
+                4. Change the Thread model to always load the channel associated with the thread to avoid unnecessary queries
+                5. Change the getThreads at the ThreadsController, since we do not need to load the channel anymore.
+                6. Create Trait "Favoritable" to separate methods/relationships related to favorite
 
 
 

@@ -14,6 +14,9 @@ class Thread extends Model
      */
     protected $guarded = [];
 
+    protected $with = ['creator','channel'];
+    // It is possible to use GlobalScope as well for cases that you do not want to include the creator in some cases
+
     protected static function boot()
     {
         parent::boot();
@@ -21,6 +24,7 @@ class Thread extends Model
         static::addGlobalScope('replyCount', function ($builder){
             $builder->withCount('replies');
         });
+        // It is possible to not pass the number of replies using the withoutGlobalScopes() [Eloquent]
     }
 
 
@@ -58,9 +62,7 @@ class Thread extends Model
      */
     public function replies()
     {
-        return $this->hasMany(Reply::class)
-                    ->withCount('favorites')
-                    ->with('owner');
+        return $this->hasMany(Reply::class);
     }
     /**
      * Add a reply to the thread.
