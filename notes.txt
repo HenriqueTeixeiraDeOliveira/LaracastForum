@@ -208,7 +208,20 @@ Twenty-first Lesson:
                 5. Change the getThreads at the ThreadsController, since we do not need to load the channel anymore.
                 6. Create Trait "Favoritable" to separate methods/relationships related to favorite
 
-
+Twenty-second Lesson
+                1. ProfilesTest
+                    a. Test 1: a_user_has_a_profile()
+                    b. Test 2: profiles_display_all_threads_created_by_the_associated_user()
+                2. Create a new route to show users' profiles "/profiles/{user}"
+                3. ProfilesController created
+                    a. show() method created
+                4. Create a new view to show the user profile
+                5. Add getRouteKeyName() method at User Model to be able to find the user by his/her name, instead of the id
+                6. Create relationship "threads()" between Users and Threads at User Model and order them
+                7. Paginate the threads at profiles.show
+                8. Create link between the threads and profiles at threads.show
+                9. Create link between the replies and profiles at threads.reply
+                10. Name profile's route.
 
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
