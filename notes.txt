@@ -223,6 +223,18 @@ Twenty-second Lesson
                 9. Create link between the replies and profiles at threads.reply
                 10. Name profile's route.
 
-
+Twenty-third Lesson
+                1. Change threads.index view style
+                2. Change profiles.show view style
+                3. Change layouts.app view style
+                4. Create layouts.nav view to separate the navbar code
+                5. Add one test at CreateThreadsTest
+                    a. a_thread_can_be_deleted
+                6. Create a new route to delete  "/threads/{channel}/{thread}"
+                7. Create the destroy() method at
+                8. Delete all the replies associated with the thread at Thread model (you could also do it at ThreadsController)
+                9. Add one test at CreateThreadsTest
+                    a. guests_cannot_delete_threads()
+                10. Add the delete button at threads.show
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 

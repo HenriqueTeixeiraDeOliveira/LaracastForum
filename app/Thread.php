@@ -25,6 +25,10 @@ class Thread extends Model
             $builder->withCount('replies');
         });
         // It is possible to not pass the number of replies using the withoutGlobalScopes() [Eloquent]
+
+        static::deleting(function ($thread) {
+           $thread->replies()->delete();
+        });
     }
 
 

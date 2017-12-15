@@ -76,6 +76,20 @@ class ThreadsController extends Controller
             'replies' => $thread->replies()->paginate(5)
         ]);
     }
+
+    public function destroy($channel, Thread $thread)
+    {
+        //$thread->replies()->delete();
+        $thread->delete();
+
+        if (request()->wantsJson()) {
+            return response([], 204);
+        }
+
+        return redirect('/threads');
+    }
+
+
     /**
      * Fetch all relevant threads.
      *
