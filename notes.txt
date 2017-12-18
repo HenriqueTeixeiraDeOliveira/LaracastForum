@@ -236,5 +236,21 @@ Twenty-third Lesson
                 9. Add one test at CreateThreadsTest
                     a. guests_cannot_delete_threads()
                 10. Add the delete button at threads.show
+
+Twenty-fourth Lesson
+                1. Change threads.index to fix channels without threads issue.
+                2. Change test "guest_cannot_delete_threads" to make sure unauthorized people cannot delete threads
+                    New name: unauthorized_users_may_not_delete_threads
+                3. Change test "a_thread_can_be_deleted" to make sure just authorized people can delete threads
+                    New name: authorized_users_can_delete_threads
+                4. Create a new policy called "ThreadPolicy". Update policy was created
+                5. AuthServiceProvider was changed to include the policy previously created and allow the adm to do whatever he/she wants
+                6. Change ThreadsController to include the policy at destroy method
+                7. Change threads.show view to make sure unauthorized people cannot see the delete button.
+                8. Change profiles.show to be able to open specific thread through the dashboard.
+
+
+
+
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 

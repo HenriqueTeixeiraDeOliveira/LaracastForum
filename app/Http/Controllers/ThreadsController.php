@@ -79,7 +79,9 @@ class ThreadsController extends Controller
 
     public function destroy($channel, Thread $thread)
     {
-        //$thread->replies()->delete();
+        $this->authorize('update',$thread);
+
+        //$thread->replies()->delete()
         $thread->delete();
 
         if (request()->wantsJson()) {
