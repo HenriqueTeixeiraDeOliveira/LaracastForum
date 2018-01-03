@@ -1,21 +1,16 @@
-#Forum
 
-1. Thread
-2. Reply
-3. User
+Laracast: Let's Build A Forum with Laravel and TDD
 
-A. Thread is created by a User
-B. A reply belongs to a thread, and belongs to a user.
+First Lesson: Initial Database Setup With Seeding
 
-
-First Lesson:
                 1. Thread Migration, Controller and Model were created
 		        2. Initial Database Setup
 		        3. Reply Migration, Controller and Model were created
 		        4. ThreadFactory created
 		        5. ReplyFactory created
 
-Second Lesson:
+Second Lesson: Test-Driving Threads
+
                 1. ThreadTest created
                     a. Test 1: a_user_can_view_all_threads()
                     b. Test 2: a_user_can_read_a_single_thread()
@@ -32,7 +27,8 @@ Second Lesson:
                 9. View threads.show created
                 *10. $thread->path shortcut (path function was created at Thread Model)
 
-Third Lesson:
+Third Lesson: A Thread Can Have Replies
+
                 *0. Laracon - How dd() can be useful to work with testing (dd() commented at Thread Model)
                 1. Rename ThreadsTest to ReadThreadsTest
                 2. Create a need test inside "ReadThreadsTest"
@@ -84,6 +80,7 @@ Seventh Lesson:
                 2. Testing helpers file "function.php" created
                     a. create
                     b. make
+                DO NOT FORGET TO RUN "composer dump-autoload"
                 3. SignIn() method created at TestCase.php
                 4. Snippet created for "testclass"
 
@@ -237,7 +234,8 @@ Twenty-third Lesson
                     a. guests_cannot_delete_threads()
                 10. Add the delete button at threads.show
 
-Twenty-fourth Lesson
+Twenty-fourth Lesson: A User Can Delete Their Threads
+
                 1. Change threads.index to fix channels without threads issue.
                 2. Change test "guest_cannot_delete_threads" to make sure unauthorized people cannot delete threads
                     New name: unauthorized_users_may_not_delete_threads
@@ -249,7 +247,22 @@ Twenty-fourth Lesson
                 7. Change threads.show view to make sure unauthorized people cannot see the delete button.
                 8. Change profiles.show to be able to open specific thread through the dashboard.
 
+Twenty-fifth Lesson: How to Construct an Activity Feed with TDD
 
+                1. Create Unit Test called ActivityTest.php
+                    a. "it_records_activity_when_a_thread_is_created()"
+                    b. "it records_activity_when_a_reply_is_created()"
+                2. Create model called "Activity.php"
+                3. Create migration for the Activity model called "MIGRATION NAME"
+                4. Create a model event to me triggered when a model is created
+                5. Create method called "RecordActivity" to make recording a Activity as general as possible
+                6. Create method called "getActivityType" to grab the activity type
+                7. Create a trait called "RecordsActivity.php"
+                8. Create a bootRecordActivity to import the model event to the trait
+                9. Create a polymorphic relationship called "activity"
+                10. Create method called "subject at Activity's model"
+                11. Add RecordActivity trait at Reply model to record activities.
+                12. Create method called "getActivitiesToRecord()"
 
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
