@@ -30,7 +30,7 @@ class Thread extends Model
         // It is possible to not pass the number of replies using the withoutGlobalScopes() [Eloquent]
 
         static::deleting(function ($thread) {
-           $thread->replies()->delete();
+           $thread->replies->each->delete();
         });
     }
 
