@@ -264,6 +264,16 @@ Twenty-fifth Lesson: How to Construct an Activity Feed with TDD
                 11. Add RecordActivity trait at Reply model to record activities.
                 12. Create method called "getActivitiesToRecord()"
 
+Twenty-sixty Lesson: How to Construct An Activity Feed with TDD: Part 2
+
+                1. Create relationship between User and Activity at User Model
+                2. Change ProfilesController to show user's activities
+                3. Change profiles.show to include all the activities
+                4. Create view called "profiles.activities.created_thread.blade.php" to show the threads created by the User
+                5. Create view called "profiles.activities.created_reply.blade.php" to show the replies leaved by the User
+                6. Create relationship between Reply and Threads at Reply model.
+                7. Create method called "getActivity" at ProfilesController.php
+
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 

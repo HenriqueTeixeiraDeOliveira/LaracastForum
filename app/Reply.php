@@ -30,4 +30,9 @@ class Reply extends Model
         //To use the command like this, the public function's name has to be user
     }
 
+    public function thread()
+    {
+        return $this->belongsTo(Thread::class);
+    }
+
 }
