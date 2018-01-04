@@ -274,6 +274,15 @@ Twenty-sixty Lesson: How to Construct An Activity Feed with TDD: Part 2
                 6. Create relationship between Reply and Threads at Reply model.
                 7. Create method called "getActivity" at ProfilesController.php
 
+Twenty-Seventh Lesson: Extracting Controller Queries to the Model
+                1. Create a new test at Unit Test called ActivityTest.php
+                    a. "it_fetches_a_feed_for_any_user()"
+                2. Create a new method called "feed" at Activity model.
+                3. Delete getActivity method at ProfilesController and migrate it to the Activity model
+                4. Update profiles_display_all_threads_created_by_the_associated_user test
+
+
+
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 
