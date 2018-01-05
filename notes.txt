@@ -274,7 +274,7 @@ Twenty-sixty Lesson: How to Construct An Activity Feed with TDD: Part 2
                 6. Create relationship between Reply and Threads at Reply model.
                 7. Create method called "getActivity" at ProfilesController.php
 
-Twenty-Seventh Lesson: Extracting Controller Queries to the Model
+Twenty-seventh Lesson: Extracting Controller Queries to the Model
 
                 1. Create a test at Unit Test called ActivityTest.php
                     a. "it_fetches_a_feed_for_any_user()"
@@ -282,13 +282,11 @@ Twenty-Seventh Lesson: Extracting Controller Queries to the Model
                 3. Delete getActivity method at ProfilesController and migrate it to the Activity model
                 4. Update profiles_display_all_threads_created_by_the_associated_user test
 
-Twenty-Eight Lesson: The Activity Deletion Bug
+Twenty-eight Lesson: The Activity Deletion Bug
 
                 1. Update test called "authorized_users_can_delete_threads" at CreateThreadTest.php
                 2. Create a new event listener at RecordsActivity trait to be executed when deleting something
                 3. Update Thread model to make sure the replies' activities are being deleted
-
-
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 
