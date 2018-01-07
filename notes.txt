@@ -299,6 +299,14 @@ Twenty-ninth Lesson: Flash Messaging with Vue
                 7. Update "bootstrap.js" to include global events and flash.
                 8. Update "RepliesController.php" to include a flash message
 
+Thirtieth Lesson: A User's Activity Feed Should Include Favorited Replies
+
+                1. Update Favorite Model to save when a reply is favorited in the activities table
+                2. Update view called "profiles.show" to make sure the application doesn't crash if the activity view does not exist
+                3. Create view called "profiles.activities.created_favorite.blade.php"
+                4. Create polymorphic relationship called "favorited" at Favorite Model
+                5. Update view called "threads.reply" to make sure each reply has its unique id. It will allow you to scroll to a specific selected reply
+
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 
