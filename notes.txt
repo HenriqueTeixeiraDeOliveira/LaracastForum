@@ -288,5 +288,17 @@ Twenty-eight Lesson: The Activity Deletion Bug
                 2. Create a new event listener at RecordsActivity trait to be executed when deleting something
                 3. Update Thread model to make sure the replies' activities are being deleted
 
+Twenty-ninth Lesson: Flash Messaging with Vue
+
+                1. Update app.blade.php to make sure it is possible to flash a message
+                2. Install node dependencies through "npm install" command.
+                3. Rename "Example.vue" to "Flash.vue".
+                4. Update "app.js" to change the component name and switch vue and bootstrap require order.
+                5. Create alert message at "Flash.vue"
+                6. Update "ThreadsController.php" to include a flash message
+                7. Update "bootstrap.js" to include global events and flash.
+                8. Update "RepliesController.php" to include a flash message
+
+
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 
