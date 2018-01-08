@@ -307,6 +307,15 @@ Thirtieth Lesson: A User's Activity Feed Should Include Favorited Replies
                 4. Create polymorphic relationship called "favorited" at Favorite Model
                 5. Update view called "threads.reply" to make sure each reply has its unique id. It will allow you to scroll to a specific selected reply
 
+Thirty-first Lesson: Authorized Users Can Delete Replies
+                1. Create a test at Feature Test called ParticipateInThreadsTest.php
+                    a. "unauthorized_users_cannot_delete_replies"
+                    b. "authorized_users_can_delete_replies"
+                2. Create a delete route for Replies at "web.php"
+                3. Update controller called "RepliesController" to add the destroy method
+                4. Create police called "ReplyPolice"
+                5. Update AuthServiceProvider to include the new police called "ReplyPolice"
+                6. Update view called "threads.reply" to make sure the authorized User can delete his/her thread
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 

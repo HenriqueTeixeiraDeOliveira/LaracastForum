@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Reply;
 use App\Thread;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,7 @@ class RepliesController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->only('store');
+        $this->middleware('auth');
     }
 
     /**
@@ -32,4 +33,14 @@ class RepliesController extends Controller
 
         return back()->with('flash', 'Your reply has been left.');
     }
+
+    public function destroy(Reply $reply)
+    {
+        $this->authorize('update',$reply);
+
+        $reply->delete();
+
+        return back();
+    }
+
 }
