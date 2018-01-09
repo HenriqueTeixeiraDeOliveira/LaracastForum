@@ -45,7 +45,8 @@ Third Lesson: A Thread Can Have Replies
                     b. A Reply belongs to an User.
                 9. Create a link to User's profile that will be created in the future
 
-Forth Lesson:
+Forth Lesson: A User May Respond to Threads
+
                 1. View threads.reply created for the reply HTML (code was extracted from threads.show)
                 2. Add 'protected $thread;' on ReadThreadsTest
                 3. ThreadTest created
@@ -61,12 +62,14 @@ Forth Lesson:
                 8. store method was created at RepliesController
                 9. addReply() was created at ThreadController
 
-Fifth Lesson:
+Fifth Lesson: The Reply Form
+
                 1. Create a Reply Form at threads.show.blade.php
                 2. Temporary padding.bottom at layouts.app
                 3. The name of the app was changed to Forum at config/app.php
 
-Sixth Lesson:
+Sixth Lesson: A User May Publish Threads
+
                 1. CreateThreadsTest created
                     a. an_authenticated_user_can_create_new_forum_threads
                     b. guests_may_not_create_threads
@@ -75,7 +78,8 @@ Sixth Lesson:
                 3. Route POST'/threads' created (ThreadsController@store)
                 4. Forth Class Error was fixed
 
-Seventh Lesson:
+Seventh Lesson: Lets Make Some Helpers
+
                 1. Update composer's autoload -> Tests/Utilities/functions.php
                 2. Testing helpers file "function.php" created
                     a. create
@@ -308,6 +312,7 @@ Thirtieth Lesson: A User's Activity Feed Should Include Favorited Replies
                 5. Update view called "threads.reply" to make sure each reply has its unique id. It will allow you to scroll to a specific selected reply
 
 Thirty-first Lesson: Authorized Users Can Delete Replies
+
                 1. Create a test at Feature Test called ParticipateInThreadsTest.php
                     a. "unauthorized_users_cannot_delete_replies"
                     b. "authorized_users_can_delete_replies"
@@ -318,6 +323,7 @@ Thirty-first Lesson: Authorized Users Can Delete Replies
                 6. Update view called "threads.reply" to make sure the authorized User can delete his/her thread
 
 Thirty-second Lesson: A Vue Reply Component
+
                 1. Update view called "threads.reply" to add the necessary tools to update replies
                 2. Update view called "layouts.app" to add style
                 3. Create vue component called "Reply.vue" to update the replies
@@ -327,7 +333,13 @@ Thirty-second Lesson: A Vue Reply Component
                     b. "unauthorized_users_cannot_update_replies"
                 6. Create patch route for Replies at "web.php"
                 7. Update controller called "RepliesController" to add the update method
-                8.
+
+Thirty-third Lesson: Ajaxifying the Delete Button
+
+                1. Update view called "threads.reply" to replace the form button to a "vue" button
+                2. Create vue component called "Reply.vue" to create destroy method
+                3. Update controller called "RepliesController" to accept the ajax request
+
 
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
