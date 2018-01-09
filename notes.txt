@@ -189,7 +189,7 @@ Nineteenth Lesson:
                 2. Create the "isFavorite" method to disable the button for the user that have already favorite the reply
                 3. Change FavoritesController to return back to the previous page
 
-Twentieth Lesson:
+Twentieth Lesson: From 56 Queries Down to 2
                 1. Install Laravel Debugbar (https://github.com/barryvdh/laravel-debugbar/tree/2.4)
                 2. Change the register method at AppServiceProvider to add the bar when the application is running in a local environment
                 3. Change "getThreads" at ThreadsController to reduce the number of path method queries
@@ -197,7 +197,7 @@ Twentieth Lesson:
                 5. Change "threads.reply" view to reduce the number of queries
                 6. Change replies() method at "Thread.php" to decrease the number of queries at "threads.reply"
 
-Twenty-first Lesson:
+Twenty-first Lesson: Global Scopes and Futher Query Reduction
                 1. Change the Reply model to always load the owner (User) who created the reply to avoid unnecessary queries.
                 2. Change the Thread model to always load the creator (User) who created the thread to avoid unnecessary queries
                 3. Add a custom getter (getFavoritesCountAttribute) at the Reply model to be able to count the number of favorites
@@ -205,7 +205,7 @@ Twenty-first Lesson:
                 5. Change the getThreads at the ThreadsController, since we do not need to load the channel anymore.
                 6. Create Trait "Favoritable" to separate methods/relationships related to favorite
 
-Twenty-second Lesson
+Twenty-second Lesson: A User Has a Profile
                 1. ProfilesTest
                     a. Test 1: a_user_has_a_profile()
                     b. Test 2: profiles_display_all_threads_created_by_the_associated_user()
@@ -220,7 +220,7 @@ Twenty-second Lesson
                 9. Create link between the replies and profiles at threads.reply
                 10. Name profile's route.
 
-Twenty-third Lesson
+Twenty-third Lesson: A User Can Delete Their Threads
                 1. Change threads.index view style
                 2. Change profiles.show view style
                 3. Change layouts.app view style
@@ -234,7 +234,7 @@ Twenty-third Lesson
                     a. guests_cannot_delete_threads()
                 10. Add the delete button at threads.show
 
-Twenty-fourth Lesson: A User Can Delete Their Threads
+Twenty-fourth Lesson: Authorization With Policies
 
                 1. Change threads.index to fix channels without threads issue.
                 2. Change test "guest_cannot_delete_threads" to make sure unauthorized people cannot delete threads
@@ -316,6 +316,19 @@ Thirty-first Lesson: Authorized Users Can Delete Replies
                 4. Create police called "ReplyPolice"
                 5. Update AuthServiceProvider to include the new police called "ReplyPolice"
                 6. Update view called "threads.reply" to make sure the authorized User can delete his/her thread
+
+Thirty-second Lesson: A Vue Reply Component
+                1. Update view called "threads.reply" to add the necessary tools to update replies
+                2. Update view called "layouts.app" to add style
+                3. Create vue component called "Reply.vue" to update the replies
+                4. Update file called "app.js" to include the Reply component
+                5. Create tests at Feature Test called ParticipateInThreadsTest.php
+                    a. "authorized_users_can_update_replies"
+                    b. "unauthorized_users_cannot_update_replies"
+                6. Create patch route for Replies at "web.php"
+                7. Update controller called "RepliesController" to add the update method
+                8.
+
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 
