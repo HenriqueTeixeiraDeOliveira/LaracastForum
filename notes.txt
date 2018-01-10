@@ -88,7 +88,9 @@ Seventh Lesson: Lets Make Some Helpers
                 3. SignIn() method created at TestCase.php
                 4. Snippet created for "testclass"
 
-Octave Lesson:   1. Route GET'/threads.create' created (ThreadsController@create)
+Octave Lesson: The Exception Handling Conundrum
+
+                1. Route GET'/threads.create' created (ThreadsController@create)
                 2. Update all the Threads Routes to Route::resource('threads','ThreadsController')
                 3. Create a Thread Form at threads.create.blade.php
                 4. View threads.create created
@@ -99,7 +101,8 @@ Octave Lesson:   1. Route GET'/threads.create' created (ThreadsController@create
                 8. Get rid of the previous modification at Handler.php (if (app()->environment() === 'testing') throw $exception);
                 *Now you can use ExceptionHandler() when you do not want to throw a Exception.
 
-Ninth Lesson:
+Ninth Lesson: A Thread Should Be Assigned a Channel
+
                 1. Merging two Tests that do similar actions, we are going to keep the name "guests_may_not_create_threads"
                     a. guests_may_not_create_threads
                     b. guests_cannot_see_the_create_thread_page
@@ -336,10 +339,21 @@ Thirty-second Lesson: A Vue Reply Component
 
 Thirty-third Lesson: Ajaxifying the Delete Button
 
-                1. Update view called "threads.reply" to replace the form button to a "vue" button
+                1. Update view called "threads.reply" to replace the delete form button to a "vue" button
                 2. Create vue component called "Reply.vue" to create destroy method
                 3. Update controller called "RepliesController" to accept the ajax request
 
+Thirty-fourth Lesson:
+
+                1. Update view called "threads.reply" to replace the favorite form button to a "vue" button
+                2. Update vue component called "Reply.vue" to be able to use favorite component inside the reply tag
+                3. Create vue component called "Favorite.vue" to create the toggle method
+                4. Update trait called "Favoritable.php" to add methods: unfavorite() and getIsFavoritedAttribute()
+                5. Update model called "Reply.php" to append favoritesCount and isFavorited attributes in the array
+                6. Create tests at Feature Test called FavoritesTest.php
+                    a. "an_authenticated_user_can_unfavorite_any_reply"
+                7. Create a delete route for Favorites at "web.php"
+                8. Update controller called "FavoritesController.php" to add the destroy method
 
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
