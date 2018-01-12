@@ -124,11 +124,14 @@ Ninth Lesson: A Thread Should Be Assigned a Channel
                 12. Update ParticipateInThreadsTest method
                     a. unauthenticated_users_may_not_add_replies
 
-Ninth Lesson(2):
+Ninth Lesson(2): A Thread Should Be Assigned a Channel
+
                 1. A ERROR at function.php was fixed. The make method was wrong.
                 2. A ERROR at CreateThreadsTest.php was fixed.
 
-Tenth Lesson:    1. Create a new test at CreateThreadsTest
+Tenth Lesson: How to Test Validation Errors
+
+                1. Create a new test at CreateThreadsTest
                     a. a_thread_requires_a_title
                     b. a_thread_requires_a_body
                     c. a_thread_requires_a_valid_channel
@@ -138,7 +141,8 @@ Tenth Lesson:    1. Create a new test at CreateThreadsTest
                 5. Create a new test at ParticipationThreadsTest
                     a. a_reply_requires_a_body
 
-Eleventh Lesson:
+Eleventh Lesson: Users Can Filter Threads By Channel
+
                 1. Create a new test at ReadThreads
                     a. a_user_can_filter_threads_according_to_a_tag
                 2. Route GET '/threads/{channel}' added at (ThreadsController@index)
@@ -153,35 +157,41 @@ Eleventh Lesson:
                 8. Edit layouts.app to create a dropdown with all the channels
                 9. Generate and Update DocBlocks.
 
-Twelfth Lesson:
+Twelfth Lesson: Validation Errors and Old Data
+
                 1. Update layouts.app view: include a "New Thread" tab at the navbar
                 2. Update threads.create view: show errors after submit a form
                 3. It is possible to create a new Thread right now.
 
-Thirteenth Lesson:
+Thirteenth Lesson: Extraction to View Composers
+
                 1. Change the channel query to AppServiceProvider.php at boot method
                 2. Views "threads.create" and "layouts.app" were changed
 
-Fourteenth Lesson:
+Fourteenth Lesson: A User Can Filter All Threads By Username
+
                 1. Create a new test at ReadThreadsTest
                     a. a_user_can_filter_threads_by_any_username
                 2. Threads Controller changed to make sure it is possible to filter by username
                 3. Update layouts.app to make sure you can filter your own threads
 
 
-Sixteenth Lesson:
+Sixteenth Lesson: Meta Details and Pagination
+
                 1. Change threads.show to add a side bar and pagination
                 2. Add Global Query Scope at Thread.php class to always get the number of replies associated with
                 3. Change ThreadsController to pass the replies in a way that you can use pagination
 
-Seventeenth Lesson:
+Seventeenth Lesson: A User Can Filter Threads By Popularity
+
                 1. Change threads.index to add the number of replies in each post
                 2. Change app.layout to define style attributes and the popular nav
                 3. Update the create and make function to be able to specify the number that needs to be generated
                 4. Change index method at ThreadsController to return json if necessary.
                 4. Create popular filter at ThreadsFilters
 
-Eighteenth Lesson:
+Eighteenth Lesson: A User Can Favorite Replies
+
                 1. Add a FavoritesTest to be able to verify if the user can reply any thread just once.
                     a. guests_can_not_favorite_anything
                     b. an_authenticated_user_can_favorite_any_reply
@@ -191,12 +201,14 @@ Eighteenth Lesson:
                 4. Create migration to create our pivot table
                 5. Create model "Favorite"
 
-Nineteenth Lesson:
+Nineteenth Lesson: The Favorite Button
+
                 1. Change "threads.reply" to add the favorite button
                 2. Create the "isFavorite" method to disable the button for the user that have already favorite the reply
                 3. Change FavoritesController to return back to the previous page
 
 Twentieth Lesson: From 56 Queries Down to 2
+
                 1. Install Laravel Debugbar (https://github.com/barryvdh/laravel-debugbar/tree/2.4)
                 2. Change the register method at AppServiceProvider to add the bar when the application is running in a local environment
                 3. Change "getThreads" at ThreadsController to reduce the number of path method queries
@@ -343,7 +355,7 @@ Thirty-third Lesson: Ajaxifying the Delete Button
                 2. Create vue component called "Reply.vue" to create destroy method
                 3. Update controller called "RepliesController" to accept the ajax request
 
-Thirty-fourth Lesson:
+Thirty-fourth Lesson: A Vue Favorite Component
 
                 1. Update view called "threads.reply" to replace the favorite form button to a "vue" button
                 2. Update vue component called "Reply.vue" to be able to use favorite component inside the reply tag
@@ -355,6 +367,11 @@ Thirty-fourth Lesson:
                 7. Create a delete route for Favorites at "web.php"
                 8. Update controller called "FavoritesController.php" to add the destroy method
 
+Thirty-fifth Lesson: Squashing Bugs
+
+                1. Update trait called "Favoritable.php" to delete the favorite's activities when you unfavorite or delete a reply
+                2. Update view called "profiles.show" to show give a feedback when you do not have activities
+                3. update view called "threads.reply" to make sure guest cannot see favorite button
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 

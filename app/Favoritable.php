@@ -7,6 +7,13 @@ namespace App;
 trait Favoritable
 {
 
+    protected static function bootFavoritable()
+    {
+        static::deleting(function ($model) {
+            $model->favorites->each->delete();
+        });
+    }
+
     public function favorites()
     {
         return $this->morphMany(Favorite::class, 'favorited'); //You should check the name at migration file '$table->unsignedInteger('favorited_id');'
@@ -25,7 +32,12 @@ trait Favoritable
     {
         $attributes = ['user_id' => auth()->id()];
 
-        $this->favorites()->where($attributes)->delete();
+
+        $this->favorites()->where($attributes)->get()->each->delete();
+
+//      $this->favorites()->where($attributes)->get()->each(function ($favorite) {
+//          $favorite->delete();
+//      });
     }
 
     public function isFavorited()
