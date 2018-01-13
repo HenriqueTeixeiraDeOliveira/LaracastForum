@@ -373,5 +373,16 @@ Thirty-fifth Lesson: Squashing Bugs
                 2. Update view called "profiles.show" to show give a feedback when you do not have activities
                 3. update view called "threads.reply" to make sure guest cannot see favorite button
 
+Thirty-sixth Lesson: A More Data-centric Approach
+
+                1. Create vue component called "Thread.vue" to make sure the information are updated instantly
+                2. Create vue component called "Replies.vue" to include the collection of replies
+                3. Update vue component called "Reply.vue" to include the template
+                4. Update file called "app.js" to include the Thread component
+                5. Update file called "bootstrap.js" to include prototype function and X-CSRF-TOKEN
+                6. Update view called "layouts.app" to include window.App information
+                7. Update view called "threads.show" to include thread component
+
+
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 
