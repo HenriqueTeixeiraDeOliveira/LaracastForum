@@ -3,385 +3,395 @@ Laracast: Let's Build A Forum with Laravel and TDD
 
 First Lesson: Initial Database Setup With Seeding
 
-                1. Thread Migration, Controller and Model were created
-		        2. Initial Database Setup
-		        3. Reply Migration, Controller and Model were created
-		        4. ThreadFactory created
-		        5. ReplyFactory created
+        1. Thread Migration, Controller and Model were created
+        2. Initial Database Setup
+        3. Reply Migration, Controller and Model were created
+        4. ThreadFactory created
+        5. ReplyFactory created
 
 Second Lesson: Test-Driving Threads
 
-                1. ThreadTest created
-                    a. Test 1: a_user_can_view_all_threads()
-                    b. Test 2: a_user_can_read_a_single_thread()
-                    note: make sure to write /** @test */ before each test
-                2. Create a local testing environment in phpunit.xml (sqlite database without file, just memory)
-                3. Route GET '/threads' created (ThreadsController@index)
-                4. Controllers name changed for
-                    a. ThreadController -> ThreadsController
-                    b. ReplyController -> RepliesController
-                5. View threads.index created
-                6. Authentication scaffolding generated
-                7. View index.threads created (I needed to use "composer dump-autoload" to show the page)
-                8. Route GET '/threads/{thread}' created (ThreadsController@show)
-                9. View threads.show created
-                *10. $thread->path shortcut (path function was created at Thread Model)
+        1. ThreadTest created
+            a. Test 1: a_user_can_view_all_threads()
+            b. Test 2: a_user_can_read_a_single_thread()
+            note: make sure to write /** @test */ before each test
+        2. Create a local testing environment in phpunit.xml (sqlite database without file, just memory)
+        3. Route GET '/threads' created (ThreadsController@index)
+        4. Controllers name changed for
+            a. ThreadController -> ThreadsController
+            b. ReplyController -> RepliesController
+        5. View threads.index created
+        6. Authentication scaffolding generated
+        7. View index.threads created (I needed to use "composer dump-autoload" to show the page)
+        8. Route GET '/threads/{thread}' created (ThreadsController@show)
+        9. View threads.show created
+        *10. $thread->path shortcut (path function was created at Thread Model)
 
 Third Lesson: A Thread Can Have Replies
 
-                *0. Laracon - How dd() can be useful to work with testing (dd() commented at Thread Model)
-                1. Rename ThreadsTest to ReadThreadsTest
-                2. Create a need test inside "ReadThreadsTest"
-                    a. a_user_can_read_replies_that_are_associated_with_a_thread()
-                3. A setUp function was created to avoid create a Thread over and over
-                4. We can refectory it and get rid of the temporary variables "$response" and put everything inline.
-                5. View threads.show.blade.php changed. Show the replies for each thread on the screen.
-                6. Create a relationship between Thread and Replies on the Thread Model. !! One-to-many relationship !!
-                    a. A thread has many replies
-                    b. A reply belongs to a Thread.
-                7. ReplyTest created to ensure that the relationship between owner an reply does exist.
-                8. Create a relationship (public function owner()) between Reply and User on the Reply Model. !! One-to-many relationship !!
-                    a. A User has many Replies
-                    b. A Reply belongs to an User.
-                9. Create a link to User's profile that will be created in the future
+        *0. Laracon - How dd() can be useful to work with testing (dd() commented at Thread Model)
+        1. Rename ThreadsTest to ReadThreadsTest
+        2. Create a need test inside "ReadThreadsTest"
+            a. a_user_can_read_replies_that_are_associated_with_a_thread()
+        3. A setUp function was created to avoid create a Thread over and over
+        4. We can refectory it and get rid of the temporary variables "$response" and put everything inline.
+        5. View threads.show.blade.php changed. Show the replies for each thread on the screen.
+        6. Create a relationship between Thread and Replies on the Thread Model. !! One-to-many relationship !!
+            a. A thread has many replies
+            b. A reply belongs to a Thread.
+        7. ReplyTest created to ensure that the relationship between owner an reply does exist.
+        8. Create a relationship (public function owner()) between Reply and User on the Reply Model. !! One-to-many relationship !!
+            a. A User has many Replies
+            b. A Reply belongs to an User.
+        9. Create a link to User's profile that will be created in the future
 
 Forth Lesson: A User May Respond to Threads
 
-                1. View threads.reply created for the reply HTML (code was extracted from threads.show)
-                2. Add 'protected $thread;' on ReadThreadsTest
-                3. ThreadTest created
-                    a. a_thread_has_replies()       To make sure the relationship returns the proper collection
-                    b. a_thread_has_a_creator()
-                4. Create a relationship (public function creator()) between a Thread and User on the Thread Model !! One-to-many relationship !!
-                    a. A User has many Threads
-                    b. A Thread belongs to an User
-                5. ParticipateInForumTest created
-                    a. an_authenticated_user_may_participate_in_forum_threads()
-                6. Helper method path() used to simplify code at Test models
-                7. Route POST '/threads/{thread}/replies' created (RepliesControler@store)
-                8. store method was created at RepliesController
-                9. addReply() was created at ThreadController
+        1. View threads.reply created for the reply HTML (code was extracted from threads.show)
+        2. Add 'protected $thread;' on ReadThreadsTest
+        3. ThreadTest created
+            a. a_thread_has_replies()       To make sure the relationship returns the proper collection
+            b. a_thread_has_a_creator()
+        4. Create a relationship (public function creator()) between a Thread and User on the Thread Model !! One-to-many relationship !!
+            a. A User has many Threads
+            b. A Thread belongs to an User
+        5. ParticipateInForumTest created
+            a. an_authenticated_user_may_participate_in_forum_threads()
+        6. Helper method path() used to simplify code at Test models
+        7. Route POST '/threads/{thread}/replies' created (RepliesControler@store)
+        8. store method was created at RepliesController
+        9. addReply() was created at ThreadController
 
 Fifth Lesson: The Reply Form
 
-                1. Create a Reply Form at threads.show.blade.php
-                2. Temporary padding.bottom at layouts.app
-                3. The name of the app was changed to Forum at config/app.php
+        1. Create a Reply Form at threads.show.blade.php
+        2. Temporary padding.bottom at layouts.app
+        3. The name of the app was changed to Forum at config/app.php
 
 Sixth Lesson: A User May Publish Threads
 
-                1. CreateThreadsTest created
-                    a. an_authenticated_user_can_create_new_forum_threads
-                    b. guests_may_not_create_threads
-                2. Test name changed:
-                    a. ParticipateInThreadsTest -> ThreadsController
-                3. Route POST'/threads' created (ThreadsController@store)
-                4. Forth Class Error was fixed
+        1. CreateThreadsTest created
+            a. an_authenticated_user_can_create_new_forum_threads
+            b. guests_may_not_create_threads
+        2. Test name changed:
+            a. ParticipateInThreadsTest -> ThreadsController
+        3. Route POST'/threads' created (ThreadsController@store)
+        4. Forth Class Error was fixed
 
 Seventh Lesson: Lets Make Some Helpers
 
-                1. Update composer's autoload -> Tests/Utilities/functions.php
-                2. Testing helpers file "function.php" created
-                    a. create
-                    b. make
-                DO NOT FORGET TO RUN "composer dump-autoload"
-                3. SignIn() method created at TestCase.php
-                4. Snippet created for "testclass"
+        1. Update composer's autoload -> Tests/Utilities/functions.php
+        2. Testing helpers file "function.php" created
+            a. create
+            b. make
+        DO NOT FORGET TO RUN "composer dump-autoload"
+        3. SignIn() method created at TestCase.php
+        4. Snippet created for "testclass"
 
 Octave Lesson: The Exception Handling Conundrum
 
-                1. Route GET'/threads.create' created (ThreadsController@create)
-                2. Update all the Threads Routes to Route::resource('threads','ThreadsController')
-                3. Create a Thread Form at threads.create.blade.php
-                4. View threads.create created
-                5. Middleware at ThreadsController changed.
-                6. Create a new test at CreateThreadsTest
-                    a. guests_cannot_see_the_create_thread_page
-                7. TestCase.php was changed to enable us to do test with and without Exceptions
-                8. Get rid of the previous modification at Handler.php (if (app()->environment() === 'testing') throw $exception);
-                *Now you can use ExceptionHandler() when you do not want to throw a Exception.
+        1. Route GET'/threads.create' created (ThreadsController@create)
+        2. Update all the Threads Routes to Route::resource('threads','ThreadsController')
+        3. Create a Thread Form at threads.create.blade.php
+        4. View threads.create created
+        5. Middleware at ThreadsController changed.
+        6. Create a new test at CreateThreadsTest
+            a. guests_cannot_see_the_create_thread_page
+        7. TestCase.php was changed to enable us to do test with and without Exceptions
+        8. Get rid of the previous modification at Handler.php (if (app()->environment() === 'testing') throw $exception);
+        *Now you can use ExceptionHandler() when you do not want to throw a Exception.
 
 Ninth Lesson: A Thread Should Be Assigned a Channel
 
-                1. Merging two Tests that do similar actions, we are going to keep the name "guests_may_not_create_threads"
-                    a. guests_may_not_create_threads
-                    b. guests_cannot_see_the_create_thread_page
-                2. Channel Model was created
-                3. Channel Migration was created
-                4. Create a relationship (public function channel()) between a Thread and Channel on the Thread Model !! One-to-many relationship !!
-                    a. A Channel has many Threads
-                    b. A Thread belongs to an Channel
-                5. Add a 'channel_id' field at thread migration table
-                6. Merge all the Factories into a single file: ModelFactory.php
-                    a. User Factory
-                    b. Thread Factory
-                    c. Reply Factory
-                7. Create the Channel Factory at ModelFactory.php
-                8. Build Channel table at Channels migration file.
-                9. Update the "store" method to be able to add the 'channel_id' into the database
-                10. Update the "path()" method
-                11. Update the routes to include the channel path
-                12. Update ParticipateInThreadsTest method
-                    a. unauthenticated_users_may_not_add_replies
+        1. Merging two Tests that do similar actions, we are going to keep the name "guests_may_not_create_threads"
+            a. guests_may_not_create_threads
+            b. guests_cannot_see_the_create_thread_page
+        2. Channel Model was created
+        3. Channel Migration was created
+        4. Create a relationship (public function channel()) between a Thread and Channel on the Thread Model !! One-to-many relationship !!
+            a. A Channel has many Threads
+            b. A Thread belongs to an Channel
+        5. Add a 'channel_id' field at thread migration table
+        6. Merge all the Factories into a single file: ModelFactory.php
+            a. User Factory
+            b. Thread Factory
+            c. Reply Factory
+        7. Create the Channel Factory at ModelFactory.php
+        8. Build Channel table at Channels migration file.
+        9. Update the "store" method to be able to add the 'channel_id' into the database
+        10. Update the "path()" method
+        11. Update the routes to include the channel path
+        12. Update ParticipateInThreadsTest method
+            a. unauthenticated_users_may_not_add_replies
 
 Ninth Lesson(2): A Thread Should Be Assigned a Channel
 
-                1. A ERROR at function.php was fixed. The make method was wrong.
-                2. A ERROR at CreateThreadsTest.php was fixed.
+        1. A ERROR at function.php was fixed. The make method was wrong.
+        2. A ERROR at CreateThreadsTest.php was fixed.
 
 Tenth Lesson: How to Test Validation Errors
 
-                1. Create a new test at CreateThreadsTest
-                    a. a_thread_requires_a_title
-                    b. a_thread_requires_a_body
-                    c. a_thread_requires_a_valid_channel
-                2. Add validation rules at ThreadController
-                3. Helper function "publishThread" was created
-                4. Add validation rules at RepliesController
-                5. Create a new test at ParticipationThreadsTest
-                    a. a_reply_requires_a_body
+        1. Create a new test at CreateThreadsTest
+            a. a_thread_requires_a_title
+            b. a_thread_requires_a_body
+            c. a_thread_requires_a_valid_channel
+        2. Add validation rules at ThreadController
+        3. Helper function "publishThread" was created
+        4. Add validation rules at RepliesController
+        5. Create a new test at ParticipationThreadsTest
+            a. a_reply_requires_a_body
 
 Eleventh Lesson: Users Can Filter Threads By Channel
 
-                1. Create a new test at ReadThreads
-                    a. a_user_can_filter_threads_according_to_a_tag
-                2. Route GET '/threads/{channel}' added at (ThreadsController@index)
-                3. Change the index method at ThreadsController
-                4. Change the default primary key to 'slug' at Channel.php
-                5. ChannelTest.php created
-                    a.
-                6. Create a relationship (public function threads()) between a Thread and Channel on the Thread Model !! One-to-many relationship !!
-                    a. A Channel has many Threads
-                    b. A Thread belongs to an Channel
-                7. Reorganize the Routes order at web.php to make sure "create" is not confuse with {channel}
-                8. Edit layouts.app to create a dropdown with all the channels
-                9. Generate and Update DocBlocks.
+        1. Create a new test at ReadThreads
+            a. a_user_can_filter_threads_according_to_a_tag
+        2. Route GET '/threads/{channel}' added at (ThreadsController@index)
+        3. Change the index method at ThreadsController
+        4. Change the default primary key to 'slug' at Channel.php
+        5. ChannelTest.php created
+            a.
+        6. Create a relationship (public function threads()) between a Thread and Channel on the Thread Model !! One-to-many relationship !!
+            a. A Channel has many Threads
+            b. A Thread belongs to an Channel
+        7. Reorganize the Routes order at web.php to make sure "create" is not confuse with {channel}
+        8. Edit layouts.app to create a dropdown with all the channels
+        9. Generate and Update DocBlocks.
 
 Twelfth Lesson: Validation Errors and Old Data
 
-                1. Update layouts.app view: include a "New Thread" tab at the navbar
-                2. Update threads.create view: show errors after submit a form
-                3. It is possible to create a new Thread right now.
+        1. Update layouts.app view: include a "New Thread" tab at the navbar
+        2. Update threads.create view: show errors after submit a form
+        3. It is possible to create a new Thread right now.
 
 Thirteenth Lesson: Extraction to View Composers
 
-                1. Change the channel query to AppServiceProvider.php at boot method
-                2. Views "threads.create" and "layouts.app" were changed
+        1. Change the channel query to AppServiceProvider.php at boot method
+        2. Views "threads.create" and "layouts.app" were changed
 
 Fourteenth Lesson: A User Can Filter All Threads By Username
 
-                1. Create a new test at ReadThreadsTest
-                    a. a_user_can_filter_threads_by_any_username
-                2. Threads Controller changed to make sure it is possible to filter by username
-                3. Update layouts.app to make sure you can filter your own threads
+        1. Create a new test at ReadThreadsTest
+            a. a_user_can_filter_threads_by_any_username
+        2. Threads Controller changed to make sure it is possible to filter by username
+        3. Update layouts.app to make sure you can filter your own threads
 
 
 Sixteenth Lesson: Meta Details and Pagination
 
-                1. Change threads.show to add a side bar and pagination
-                2. Add Global Query Scope at Thread.php class to always get the number of replies associated with
-                3. Change ThreadsController to pass the replies in a way that you can use pagination
+        1. Change threads.show to add a side bar and pagination
+        2. Add Global Query Scope at Thread.php class to always get the number of replies associated with
+        3. Change ThreadsController to pass the replies in a way that you can use pagination
 
 Seventeenth Lesson: A User Can Filter Threads By Popularity
 
-                1. Change threads.index to add the number of replies in each post
-                2. Change app.layout to define style attributes and the popular nav
-                3. Update the create and make function to be able to specify the number that needs to be generated
-                4. Change index method at ThreadsController to return json if necessary.
-                4. Create popular filter at ThreadsFilters
+        1. Change threads.index to add the number of replies in each post
+        2. Change app.layout to define style attributes and the popular nav
+        3. Update the create and make function to be able to specify the number that needs to be generated
+        4. Change index method at ThreadsController to return json if necessary.
+        4. Create popular filter at ThreadsFilters
 
 Eighteenth Lesson: A User Can Favorite Replies
 
-                1. Add a FavoritesTest to be able to verify if the user can reply any thread just once.
-                    a. guests_can_not_favorite_anything
-                    b. an_authenticated_user_can_favorite_any_reply
-                    c. an_authenticated_user_may_only_favorite_a_reply_once
-                2. Create a new route for the post request "/replies/{reply}/favorites"
-                3. Create a new controller to define the post method
-                4. Create migration to create our pivot table
-                5. Create model "Favorite"
+        1. Add a FavoritesTest to be able to verify if the user can reply any thread just once.
+            a. guests_can_not_favorite_anything
+            b. an_authenticated_user_can_favorite_any_reply
+            c. an_authenticated_user_may_only_favorite_a_reply_once
+        2. Create a new route for the post request "/replies/{reply}/favorites"
+        3. Create a new controller to define the post method
+        4. Create migration to create our pivot table
+        5. Create model "Favorite"
 
 Nineteenth Lesson: The Favorite Button
 
-                1. Change "threads.reply" to add the favorite button
-                2. Create the "isFavorite" method to disable the button for the user that have already favorite the reply
-                3. Change FavoritesController to return back to the previous page
+        1. Change "threads.reply" to add the favorite button
+        2. Create the "isFavorite" method to disable the button for the user that have already favorite the reply
+        3. Change FavoritesController to return back to the previous page
 
 Twentieth Lesson: From 56 Queries Down to 2
 
-                1. Install Laravel Debugbar (https://github.com/barryvdh/laravel-debugbar/tree/2.4)
-                2. Change the register method at AppServiceProvider to add the bar when the application is running in a local environment
-                3. Change "getThreads" at ThreadsController to reduce the number of path method queries
-                4. Change boot method at AppServiceProvider to reduce the number of channel queries
-                5. Change "threads.reply" view to reduce the number of queries
-                6. Change replies() method at "Thread.php" to decrease the number of queries at "threads.reply"
+        1. Install Laravel Debugbar (https://github.com/barryvdh/laravel-debugbar/tree/2.4)
+        2. Change the register method at AppServiceProvider to add the bar when the application is running in a local environment
+        3. Change "getThreads" at ThreadsController to reduce the number of path method queries
+        4. Change boot method at AppServiceProvider to reduce the number of channel queries
+        5. Change "threads.reply" view to reduce the number of queries
+        6. Change replies() method at "Thread.php" to decrease the number of queries at "threads.reply"
 
 Twenty-first Lesson: Global Scopes and Futher Query Reduction
-                1. Change the Reply model to always load the owner (User) who created the reply to avoid unnecessary queries.
-                2. Change the Thread model to always load the creator (User) who created the thread to avoid unnecessary queries
-                3. Add a custom getter (getFavoritesCountAttribute) at the Reply model to be able to count the number of favorites
-                4. Change the Thread model to always load the channel associated with the thread to avoid unnecessary queries
-                5. Change the getThreads at the ThreadsController, since we do not need to load the channel anymore.
-                6. Create Trait "Favoritable" to separate methods/relationships related to favorite
+        1. Change the Reply model to always load the owner (User) who created the reply to avoid unnecessary queries.
+        2. Change the Thread model to always load the creator (User) who created the thread to avoid unnecessary queries
+        3. Add a custom getter (getFavoritesCountAttribute) at the Reply model to be able to count the number of favorites
+        4. Change the Thread model to always load the channel associated with the thread to avoid unnecessary queries
+        5. Change the getThreads at the ThreadsController, since we do not need to load the channel anymore.
+        6. Create Trait "Favoritable" to separate methods/relationships related to favorite
 
 Twenty-second Lesson: A User Has a Profile
-                1. ProfilesTest
-                    a. Test 1: a_user_has_a_profile()
-                    b. Test 2: profiles_display_all_threads_created_by_the_associated_user()
-                2. Create a new route to show users' profiles "/profiles/{user}"
-                3. ProfilesController created
-                    a. show() method created
-                4. Create a new view to show the user profile
-                5. Add getRouteKeyName() method at User Model to be able to find the user by his/her name, instead of the id
-                6. Create relationship "threads()" between Users and Threads at User Model and order them
-                7. Paginate the threads at profiles.show
-                8. Create link between the threads and profiles at threads.show
-                9. Create link between the replies and profiles at threads.reply
-                10. Name profile's route.
+        1. ProfilesTest
+            a. Test 1: a_user_has_a_profile()
+            b. Test 2: profiles_display_all_threads_created_by_the_associated_user()
+        2. Create a new route to show users' profiles "/profiles/{user}"
+        3. ProfilesController created
+            a. show() method created
+        4. Create a new view to show the user profile
+        5. Add getRouteKeyName() method at User Model to be able to find the user by his/her name, instead of the id
+        6. Create relationship "threads()" between Users and Threads at User Model and order them
+        7. Paginate the threads at profiles.show
+        8. Create link between the threads and profiles at threads.show
+        9. Create link between the replies and profiles at threads.reply
+        10. Name profile's route.
 
 Twenty-third Lesson: A User Can Delete Their Threads
-                1. Change threads.index view style
-                2. Change profiles.show view style
-                3. Change layouts.app view style
-                4. Create layouts.nav view to separate the navbar code
-                5. Add one test at CreateThreadsTest
-                    a. a_thread_can_be_deleted
-                6. Create a new route to delete  "/threads/{channel}/{thread}"
-                7. Create the destroy() method at
-                8. Delete all the replies associated with the thread at Thread model (you could also do it at ThreadsController)
-                9. Add one test at CreateThreadsTest
-                    a. guests_cannot_delete_threads()
-                10. Add the delete button at threads.show
+        1. Change threads.index view style
+        2. Change profiles.show view style
+        3. Change layouts.app view style
+        4. Create layouts.nav view to separate the navbar code
+        5. Add one test at CreateThreadsTest
+            a. a_thread_can_be_deleted
+        6. Create a new route to delete  "/threads/{channel}/{thread}"
+        7. Create the destroy() method at
+        8. Delete all the replies associated with the thread at Thread model (you could also do it at ThreadsController)
+        9. Add one test at CreateThreadsTest
+            a. guests_cannot_delete_threads()
+        10. Add the delete button at threads.show
 
 Twenty-fourth Lesson: Authorization With Policies
 
-                1. Change threads.index to fix channels without threads issue.
-                2. Change test "guest_cannot_delete_threads" to make sure unauthorized people cannot delete threads
-                    New name: unauthorized_users_may_not_delete_threads
-                3. Change test "a_thread_can_be_deleted" to make sure just authorized people can delete threads
-                    New name: authorized_users_can_delete_threads
-                4. Create a new policy called "ThreadPolicy". Update policy was created
-                5. AuthServiceProvider was changed to include the policy previously created and allow the adm to do whatever he/she wants
-                6. Change ThreadsController to include the policy at destroy method
-                7. Change threads.show view to make sure unauthorized people cannot see the delete button.
-                8. Change profiles.show to be able to open specific thread through the dashboard.
+        1. Change threads.index to fix channels without threads issue.
+        2. Change test "guest_cannot_delete_threads" to make sure unauthorized people cannot delete threads
+            New name: unauthorized_users_may_not_delete_threads
+        3. Change test "a_thread_can_be_deleted" to make sure just authorized people can delete threads
+            New name: authorized_users_can_delete_threads
+        4. Create a new policy called "ThreadPolicy". Update policy was created
+        5. AuthServiceProvider was changed to include the policy previously created and allow the adm to do whatever he/she wants
+        6. Change ThreadsController to include the policy at destroy method
+        7. Change threads.show view to make sure unauthorized people cannot see the delete button.
+        8. Change profiles.show to be able to open specific thread through the dashboard.
 
 Twenty-fifth Lesson: How to Construct an Activity Feed with TDD
 
-                1. Create Unit Test called ActivityTest.php
-                    a. "it_records_activity_when_a_thread_is_created()"
-                    b. "it records_activity_when_a_reply_is_created()"
-                2. Create model called "Activity.php"
-                3. Create migration for the Activity model called "MIGRATION NAME"
-                4. Create a model event to me triggered when a model is created
-                5. Create method called "RecordActivity" to make recording a Activity as general as possible
-                6. Create method called "getActivityType" to grab the activity type
-                7. Create a trait called "RecordsActivity.php"
-                8. Create a bootRecordActivity to import the model event to the trait
-                9. Create a polymorphic relationship called "activity"
-                10. Create method called "subject at Activity's model"
-                11. Add RecordActivity trait at Reply model to record activities.
-                12. Create method called "getActivitiesToRecord()"
+        1. Create Unit Test called ActivityTest.php
+            a. "it_records_activity_when_a_thread_is_created()"
+            b. "it records_activity_when_a_reply_is_created()"
+        2. Create model called "Activity.php"
+        3. Create migration for the Activity model called "MIGRATION NAME"
+        4. Create a model event to me triggered when a model is created
+        5. Create method called "RecordActivity" to make recording a Activity as general as possible
+        6. Create method called "getActivityType" to grab the activity type
+        7. Create a trait called "RecordsActivity.php"
+        8. Create a bootRecordActivity to import the model event to the trait
+        9. Create a polymorphic relationship called "activity"
+        10. Create method called "subject at Activity's model"
+        11. Add RecordActivity trait at Reply model to record activities.
+        12. Create method called "getActivitiesToRecord()"
 
 Twenty-sixty Lesson: How to Construct An Activity Feed with TDD: Part 2
 
-                1. Create relationship between User and Activity at User Model
-                2. Change ProfilesController to show user's activities
-                3. Change profiles.show to include all the activities
-                4. Create view called "profiles.activities.created_thread.blade.php" to show the threads created by the User
-                5. Create view called "profiles.activities.created_reply.blade.php" to show the replies leaved by the User
-                6. Create relationship between Reply and Threads at Reply model.
-                7. Create method called "getActivity" at ProfilesController.php
+        1. Create relationship between User and Activity at User Model
+        2. Change ProfilesController to show user's activities
+        3. Change profiles.show to include all the activities
+        4. Create view called "profiles.activities.created_thread.blade.php" to show the threads created by the User
+        5. Create view called "profiles.activities.created_reply.blade.php" to show the replies leaved by the User
+        6. Create relationship between Reply and Threads at Reply model.
+        7. Create method called "getActivity" at ProfilesController.php
 
 Twenty-seventh Lesson: Extracting Controller Queries to the Model
 
-                1. Create a test at Unit Test called ActivityTest.php
-                    a. "it_fetches_a_feed_for_any_user()"
-                2. Create a new method called "feed" at Activity model.
-                3. Delete getActivity method at ProfilesController and migrate it to the Activity model
-                4. Update profiles_display_all_threads_created_by_the_associated_user test
+        1. Create a test at Unit Test called ActivityTest.php
+            a. "it_fetches_a_feed_for_any_user()"
+        2. Create a new method called "feed" at Activity model.
+        3. Delete getActivity method at ProfilesController and migrate it to the Activity model
+        4. Update profiles_display_all_threads_created_by_the_associated_user test
 
 Twenty-eight Lesson: The Activity Deletion Bug
 
-                1. Update test called "authorized_users_can_delete_threads" at CreateThreadTest.php
-                2. Create a new event listener at RecordsActivity trait to be executed when deleting something
-                3. Update Thread model to make sure the replies' activities are being deleted
+        1. Update test called "authorized_users_can_delete_threads" at CreateThreadTest.php
+        2. Create a new event listener at RecordsActivity trait to be executed when deleting something
+        3. Update Thread model to make sure the replies' activities are being deleted
 
 Twenty-ninth Lesson: Flash Messaging with Vue
 
-                1. Update app.blade.php to make sure it is possible to flash a message
-                2. Install node dependencies through "npm install" command.
-                3. Rename "Example.vue" to "Flash.vue".
-                4. Update "app.js" to change the component name and switch vue and bootstrap require order.
-                5. Create alert message at "Flash.vue"
-                6. Update "ThreadsController.php" to include a flash message
-                7. Update "bootstrap.js" to include global events and flash.
-                8. Update "RepliesController.php" to include a flash message
+        1. Update app.blade.php to make sure it is possible to flash a message
+        2. Install node dependencies through "npm install" command.
+        3. Rename "Example.vue" to "Flash.vue".
+        4. Update "app.js" to change the component name and switch vue and bootstrap require order.
+        5. Create alert message at "Flash.vue"
+        6. Update "ThreadsController.php" to include a flash message
+        7. Update "bootstrap.js" to include global events and flash.
+        8. Update "RepliesController.php" to include a flash message
 
 Thirtieth Lesson: A User's Activity Feed Should Include Favorited Replies
 
-                1. Update Favorite Model to save when a reply is favorited in the activities table
-                2. Update view called "profiles.show" to make sure the application doesn't crash if the activity view does not exist
-                3. Create view called "profiles.activities.created_favorite.blade.php"
-                4. Create polymorphic relationship called "favorited" at Favorite Model
-                5. Update view called "threads.reply" to make sure each reply has its unique id. It will allow you to scroll to a specific selected reply
+        1. Update Favorite Model to save when a reply is favorited in the activities table
+        2. Update view called "profiles.show" to make sure the application doesn't crash if the activity view does not exist
+        3. Create view called "profiles.activities.created_favorite.blade.php"
+        4. Create polymorphic relationship called "favorited" at Favorite Model
+        5. Update view called "threads.reply" to make sure each reply has its unique id. It will allow you to scroll to a specific selected reply
 
 Thirty-first Lesson: Authorized Users Can Delete Replies
 
-                1. Create a test at Feature Test called ParticipateInThreadsTest.php
-                    a. "unauthorized_users_cannot_delete_replies"
-                    b. "authorized_users_can_delete_replies"
-                2. Create a delete route for Replies at "web.php"
-                3. Update controller called "RepliesController" to add the destroy method
-                4. Create police called "ReplyPolice"
-                5. Update AuthServiceProvider to include the new police called "ReplyPolice"
-                6. Update view called "threads.reply" to make sure the authorized User can delete his/her thread
+        1. Create a test at Feature Test called ParticipateInThreadsTest.php
+            a. "unauthorized_users_cannot_delete_replies"
+            b. "authorized_users_can_delete_replies"
+        2. Create a delete route for Replies at "web.php"
+        3. Update controller called "RepliesController" to add the destroy method
+        4. Create police called "ReplyPolice"
+        5. Update AuthServiceProvider to include the new police called "ReplyPolice"
+        6. Update view called "threads.reply" to make sure the authorized User can delete his/her thread
 
 Thirty-second Lesson: A Vue Reply Component
 
-                1. Update view called "threads.reply" to add the necessary tools to update replies
-                2. Update view called "layouts.app" to add style
-                3. Create vue component called "Reply.vue" to update the replies
-                4. Update file called "app.js" to include the Reply component
-                5. Create tests at Feature Test called ParticipateInThreadsTest.php
-                    a. "authorized_users_can_update_replies"
-                    b. "unauthorized_users_cannot_update_replies"
-                6. Create patch route for Replies at "web.php"
-                7. Update controller called "RepliesController" to add the update method
+        1. Update view called "threads.reply" to add the necessary tools to update replies
+        2. Update view called "layouts.app" to add style
+        3. Create vue component called "Reply.vue" to update the replies
+        4. Update file called "app.js" to include the Reply component
+        5. Create tests at Feature Test called ParticipateInThreadsTest.php
+            a. "authorized_users_can_update_replies"
+            b. "unauthorized_users_cannot_update_replies"
+        6. Create patch route for Replies at "web.php"
+        7. Update controller called "RepliesController" to add the update method
 
 Thirty-third Lesson: Ajaxifying the Delete Button
 
-                1. Update view called "threads.reply" to replace the delete form button to a "vue" button
-                2. Create vue component called "Reply.vue" to create destroy method
-                3. Update controller called "RepliesController" to accept the ajax request
+        1. Update view called "threads.reply" to replace the delete form button to a "vue" button
+        2. Create vue component called "Reply.vue" to create destroy method
+        3. Update controller called "RepliesController" to accept the ajax request
 
 Thirty-fourth Lesson: A Vue Favorite Component
 
-                1. Update view called "threads.reply" to replace the favorite form button to a "vue" button
-                2. Update vue component called "Reply.vue" to be able to use favorite component inside the reply tag
-                3. Create vue component called "Favorite.vue" to create the toggle method
-                4. Update trait called "Favoritable.php" to add methods: unfavorite() and getIsFavoritedAttribute()
-                5. Update model called "Reply.php" to append favoritesCount and isFavorited attributes in the array
-                6. Create tests at Feature Test called FavoritesTest.php
-                    a. "an_authenticated_user_can_unfavorite_any_reply"
-                7. Create a delete route for Favorites at "web.php"
-                8. Update controller called "FavoritesController.php" to add the destroy method
+        1. Update view called "threads.reply" to replace the favorite form button to a "vue" button
+        2. Update vue component called "Reply.vue" to be able to use favorite component inside the reply tag
+        3. Create vue component called "Favorite.vue" to create the toggle method
+        4. Update trait called "Favoritable.php" to add methods: unfavorite() and getIsFavoritedAttribute()
+        5. Update model called "Reply.php" to append favoritesCount and isFavorited attributes in the array
+        6. Create tests at Feature Test called FavoritesTest.php
+            a. "an_authenticated_user_can_unfavorite_any_reply"
+        7. Create a delete route for Favorites at "web.php"
+        8. Update controller called "FavoritesController.php" to add the destroy method
 
 Thirty-fifth Lesson: Squashing Bugs
 
-                1. Update trait called "Favoritable.php" to delete the favorite's activities when you unfavorite or delete a reply
-                2. Update view called "profiles.show" to show give a feedback when you do not have activities
-                3. update view called "threads.reply" to make sure guest cannot see favorite button
+        1. Update trait called "Favoritable.php" to delete the favorite's activities when you unfavorite or delete a reply
+        2. Update view called "profiles.show" to show give a feedback when you do not have activities
+        3. update view called "threads.reply" to make sure guest cannot see favorite button
 
 Thirty-sixth Lesson: A More Data-centric Approach
 
-                1. Create vue component called "Thread.vue" to make sure the information are updated instantly
-                2. Create vue component called "Replies.vue" to include the collection of replies
-                3. Update vue component called "Reply.vue" to include the template
-                4. Update file called "app.js" to include the Thread component
-                5. Update file called "bootstrap.js" to include prototype function and X-CSRF-TOKEN
-                6. Update view called "layouts.app" to include window.App information
-                7. Update view called "threads.show" to include thread component
+        1. Create vue component called "Thread.vue" to make sure the information are updated instantly
+        2. Create vue component called "Replies.vue" to include the collection of replies
+        3. Update vue component called "Reply.vue" to include the template
+        4. Update file called "app.js" to include the Thread component
+        5. Update file called "bootstrap.js" to include prototype function and X-CSRF-TOKEN
+        6. Update view called "layouts.app" to include window.App information
+        7. Update view called "threads.show" to include thread component
+
+Thirty-seventh Lesson: A New Reply Component
+
+        1. Update view called "threads.blade" to get rid of the create reply form
+        2. Create vue component called "NewReply.vue" to create new replies through Ajax requests
+        3. Update vue component called "Replies" to include the new reply component as its child
+        4. Update model called "User.php" to hide the user's email
+        5. Update model called "Thread.php" to return the method addReply
+        6. Update controller called "RepliesController" to make it possible to send a ajax request
+
 
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
