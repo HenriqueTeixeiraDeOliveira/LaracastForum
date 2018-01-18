@@ -362,7 +362,7 @@ Thirty-fourth Lesson: A Vue Favorite Component
         3. Create vue component called "Favorite.vue" to create the toggle method
         4. Update trait called "Favoritable.php" to add methods: unfavorite() and getIsFavoritedAttribute()
         5. Update model called "Reply.php" to append favoritesCount and isFavorited attributes in the array
-        6. Create tests at Feature Test called FavoritesTest.php
+        6. Create test at Feature Test called FavoritesTest.php
             a. "an_authenticated_user_can_unfavorite_any_reply"
         7. Create a delete route for Favorites at "web.php"
         8. Update controller called "FavoritesController.php" to add the destroy method
@@ -391,6 +391,24 @@ Thirty-seventh Lesson: A New Reply Component
         4. Update model called "User.php" to hide the user's email
         5. Update model called "Thread.php" to return the method addReply
         6. Update controller called "RepliesController" to make it possible to send a ajax request
+
+Thirty-eight Lesson: A New Reply Component
+
+        1. Update view called "threads.show" to paginate the replies.
+        2. Update vue component called "NewReply.vue" to get rid of the endpoint.
+        3. Update vue component called "Replies" to show the paginated replies
+        4. Update vue component called "Reply" to show the right time through the javascript package called moment.
+        5. Create vue component called "Paginator" to paginate the replies
+        6. Update file called "collection.js" to include javascript functions that will be used
+        7. Update file called "app.js" to include "Paginator" component
+        8. Update file called "web.php" to add the index method at the RepliesController
+        9. Create test at Feature Test called ReadThreadsTest.php
+            a. "a_user_can_request_all_replies_for_a_given_thread
+        10. Update controller called "RepliesController" to modify the middleware and allow the index method to show the replies
+        11. Update controller called "ThreadsController" to get rid of Laravel's pagination
+        12. Add dependencies called "moment" at package.json
+        13. Add dependencies called "moment" at package-lock.json
+
 
 
 
