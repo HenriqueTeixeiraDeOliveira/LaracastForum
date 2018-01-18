@@ -24,11 +24,6 @@ class Thread extends Model
     {
         parent::boot();
 
-        static::addGlobalScope('replyCount', function ($builder){
-            $builder->withCount('replies');
-        });
-        // It is possible to not pass the number of replies using the withoutGlobalScopes() [Eloquent]
-
         static::deleting(function ($thread) {
            $thread->replies->each->delete();
         });

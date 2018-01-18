@@ -409,6 +409,21 @@ Thirty-eight Lesson: A New Reply Component
         12. Add dependencies called "moment" at package.json
         13. Add dependencies called "moment" at package-lock.json
 
+Thirty-nine Lesson: A User Can Filter By Unanswered Threads
+
+        1. Update vue component called "Replies" to scroll up after changing the page
+        2. Update controller called "RepliesController" change the number of replies per page
+        3. Update test at Feature Test called ParticipateInThreadsTest.php
+            a. "an_authenticated_user_may_participate_in_forum_threads"
+        3. Delete test at Feature Test called ParticipateInThreadsTest.php
+            a. "a_user_can_read_replies_that_are_associated_with_a_thread"
+        5. Update file called "ThreadsFilters" to be able to filter by unanswered threads
+        5. Update view called "layouts.nav" to show the unanswered threads
+        6. Update model called "Thread.php" to delete the global scope responsible to count the number of replies for each thread
+        7. Update migration called "2017_11_17_195931_create_threads_table,php" to include the "replies_count" field
+        8. Update model called "Reply.php" to increment the replies_count when a reply is leaved and decrement when it is deleted
+
+
 
 
 
