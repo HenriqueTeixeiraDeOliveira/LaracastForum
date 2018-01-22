@@ -272,7 +272,7 @@ Twenty-fifth Lesson: How to Construct an Activity Feed with TDD
             a. "it_records_activity_when_a_thread_is_created()"
             b. "it records_activity_when_a_reply_is_created()"
         2. Create model called "Activity.php"
-        3. Create migration for the Activity model called "MIGRATION NAME"
+        3. Create migration for the Activity model called "2018_01_03_192847_create_activities_table"
         4. Create a model event to me triggered when a model is created
         5. Create method called "RecordActivity" to make recording a Activity as general as possible
         6. Create method called "getActivityType" to grab the activity type
@@ -423,8 +423,13 @@ Thirty-nine Lesson: A User Can Filter By Unanswered Threads
         7. Update migration called "2017_11_17_195931_create_threads_table,php" to include the "replies_count" field
         8. Update model called "Reply.php" to increment the replies_count when a reply is leaved and decrement when it is deleted
 
-
-
+Fortieth Lesson: Thread Subscriptions: Part 1
+        1. Create tests at Unit Test called ThreadTest.php
+            a. "a_thread_can_be_subscribed_to"
+            b. "a_thread_can_be_unsubscribed_from"
+        2. Update model called "Thread.php" to create subscribe, unsubscribe and subscriptions methods
+        3. Create model called "SubscriptionThread.php"
+        4. Create migration for the ThreadSubscription model called "2018_01_22_123150_create_thread_subscriptions_table"
 
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
