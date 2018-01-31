@@ -434,10 +434,25 @@ Fortieth Lesson: Thread Subscriptions: Part 1
 
 Fortieth-first Lesson: Thread Subscriptions: Part 2
 
-        1. Create test at new Feature Test called "SubscribeToThreads.php"
+        1. Create test at new Feature Test called "SubscribeToThreadsTest.php"
             a. "a_user_can_subscribe_to_threads"
         2. Update file called "web.php" to include subscriptions route
         3. Create controller called "ThreadSubscriptionsController" to create the store method
+
+Fortieth-second Lesson: Thread Subscriptions: Part 3
+
+        1. Update view called "threads.show" to include the subscribe button
+        2. Create vue component called "SubscribeButton.vue" to subscribe and unsubscribe users
+        3. Update vue file called "Thread.vue" to include the vue component called "SubscribeButton.vue"
+        4. Create test at Unit Test called "ThreadTest.php"
+            a. it_knows_if_the_authenticated_user_is_subscribed_to_it
+        5. Create test at Feature Test called "SubscribeToThreadsTest.php"
+            a. a_user_can_unsubscribe_from_threads
+        5. Update migration called "2018_01_22_123150_create_thread_subscriptions_table" to make each subscription unique
+        6. Update file called "web.php" to add the delete method at the ThreadSubscriptionsController.php
+        7. Update controller called "ThreadSubscriptionsController.php" to add the delete method
+        8. Update class called "Thread.php" to add the method called "getIsSubscribedToAttribute"
+
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 

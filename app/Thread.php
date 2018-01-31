@@ -20,6 +20,8 @@ class Thread extends Model
     protected $with = ['creator','channel'];
     // It is possible to use GlobalScope as well for cases that you do not want to include the creator in some cases
 
+    protected $appends = ['isSubscribedTo'];
+
     protected static function boot()
     {
         parent::boot();
@@ -104,6 +106,13 @@ class Thread extends Model
     public function subscriptions()
     {
         return $this->hasMany(ThreadSubscription::class);
+    }
+
+    public function getIsSubscribedToAttribute()
+    {
+        return $this->subscriptions()
+                ->where('user_id', auth()->id())
+                ->exists();
     }
 
 }
