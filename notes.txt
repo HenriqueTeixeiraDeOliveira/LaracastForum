@@ -432,14 +432,14 @@ Fortieth Lesson: Thread Subscriptions: Part 1
         3. Create model called "SubscriptionThread.php"
         4. Create migration for the ThreadSubscription model called "2018_01_22_123150_create_thread_subscriptions_table"
 
-Fortieth-first Lesson: Thread Subscriptions: Part 2
+Forty-first Lesson: Thread Subscriptions: Part 2
 
         1. Create test at new Feature Test called "SubscribeToThreadsTest.php"
             a. "a_user_can_subscribe_to_threads"
         2. Update file called "web.php" to include subscriptions route
         3. Create controller called "ThreadSubscriptionsController" to create the store method
 
-Fortieth-second Lesson: Thread Subscriptions: Part 3
+Forty-second Lesson: Thread Subscriptions: Part 3
 
         1. Update view called "threads.show" to include the subscribe button
         2. Create vue component called "SubscribeButton.vue" to subscribe and unsubscribe users
@@ -453,7 +453,7 @@ Fortieth-second Lesson: Thread Subscriptions: Part 3
         7. Update controller called "ThreadSubscriptionsController.php" to add the delete method
         8. Update class called "Thread.php" to add the method called "getIsSubscribedToAttribute"
 
-Fortieth-third Lesson: Thread Subscriptions: Part 4
+Forty-third Lesson: Thread Subscriptions: Part 4
 
         1. Update test at Feature Test called "SubscribeToThreadsTest.php"
             a. a_user_can_subscribe_to_threads - Uncomment command
@@ -467,7 +467,7 @@ Fortieth-third Lesson: Thread Subscriptions: Part 4
         6. Update file called "web.php" to add delete and index routes for UserNotificationController.php
         7. Create controller called "UserNotificationController.php"
 
-Fortieth-forth Lesson: Test Refactoring
+Forty-forth Lesson: Test Refactoring
 
         1. Refactoring tests at Feature Test called "NotificationsTest.php"
             a. CREATE setUp function to sign in the user
@@ -475,7 +475,7 @@ Fortieth-forth Lesson: Test Refactoring
             c. a_user_can_mark_a_notification_as_read
         2. Create a model factory for notifications
 
-Fortieth-fifth Lesson: Thread Subscriptions: Part 5
+Forty-fifth Lesson: Thread Subscriptions: Part 5
 
         1. Update view called "layouts.nav" to include the notification icon
         2. Create vue component called "UserNotifications.vue"
@@ -483,9 +483,14 @@ Fortieth-fifth Lesson: Thread Subscriptions: Part 5
         4. Update notification called "ThreadWasUpdated" to send a customized message to the user
         5. Refactoring model called "Thread.php"
 
-Fortieth-sixth Lesson: Refactoring for the Better or Worse?
+Forty-sixth Lesson: Refactoring for the Better or Worse?
 
         1. Refactoring model called "Thread.php"
+
+Forty-seventh Lesson: Notification Fakes in a Nutshell
+
+        1. Create test at Unit Test called "ThreadTest.php"
+            a. a_thread_notifies_all_registered_subscribers_when_a_reply_is_added
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 
