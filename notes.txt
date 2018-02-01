@@ -467,7 +467,13 @@ Fortieth-third Lesson: Thread Subscriptions: Part 4
         6. Update file called "web.php" to add delete and index routes for UserNotificationController.php
         7. Create controller called "UserNotificationController.php"
 
+Fortieth-forth Lesson: Test Refactoring
 
+        1. Refactoring tests at Feature Test called "NotificationsTest.php"
+            a. CREATE setUp function to sign in the user
+            b. a_user_can_fetch_their_unread_notification
+            c. a_user_can_mark_a_notification_as_read
+        2. Create a model factory for notifications
 
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
