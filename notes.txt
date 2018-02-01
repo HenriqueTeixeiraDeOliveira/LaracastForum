@@ -483,5 +483,9 @@ Fortieth-fifth Lesson: Thread Subscriptions: Part 5
         4. Update notification called "ThreadWasUpdated" to send a customized message to the user
         5. Refactoring model called "Thread.php"
 
+Fortieth-sixth Lesson: Refactoring for the Better or Worse?
+
+        1. Refactoring model called "Thread.php"
+
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 
