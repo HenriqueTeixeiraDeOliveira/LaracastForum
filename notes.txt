@@ -475,6 +475,13 @@ Fortieth-forth Lesson: Test Refactoring
             c. a_user_can_mark_a_notification_as_read
         2. Create a model factory for notifications
 
+Fortieth-fifth Lesson: Thread Subscriptions: Part 5
+
+        1. Update view called "layouts.nav" to include the notification icon
+        2. Create vue component called "UserNotifications.vue"
+        3. Update file called "app.js" to include UserNotifications component
+        4. Update notification called "ThreadWasUpdated" to send a customized message to the user
+        5. Refactoring model called "Thread.php"
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 
