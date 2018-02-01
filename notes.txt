@@ -453,6 +453,22 @@ Fortieth-second Lesson: Thread Subscriptions: Part 3
         7. Update controller called "ThreadSubscriptionsController.php" to add the delete method
         8. Update class called "Thread.php" to add the method called "getIsSubscribedToAttribute"
 
+Fortieth-third Lesson: Thread Subscriptions: Part 4
+
+        1. Update test at Feature Test called "SubscribeToThreadsTest.php"
+            a. a_user_can_subscribe_to_threads - Uncomment command
+        2. Update model called "Thread.php" to notify user when a reply is left
+        3. Create notification called "ThreadWasUpdated"
+        4. Create migration related to notifications called "2018_02_01_001252_create_notifications_table.php"
+        5. Create tests at Feature Test called "NotificationsTest.php"
+            a. a_notification_is_prepared_when_a_subscribed_thread_receives_a_new_reply_that_is_not_by_the_current_user
+            b. a_user_can_fetch_their_unread_notification
+            c. a_user_can_mark_a_notification_as_read
+        6. Update file called "web.php" to add delete and index routes for UserNotificationController.php
+        7. Create controller called "UserNotificationController.php"
+
+
+
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 
