@@ -301,7 +301,7 @@ Twenty-seventh Lesson: Extracting Controller Queries to the Model
         3. Delete getActivity method at ProfilesController and migrate it to the Activity model
         4. Update profiles_display_all_threads_created_by_the_associated_user test
 
-Twenty-eight Lesson: The Activity Deletion Bug
+Twenty-eighth Lesson: The Activity Deletion Bug
 
         1. Update test called "authorized_users_can_delete_threads" at CreateThreadTest.php
         2. Create a new event listener at RecordsActivity trait to be executed when deleting something
@@ -392,7 +392,7 @@ Thirty-seventh Lesson: A New Reply Component
         5. Update model called "Thread.php" to return the method addReply
         6. Update controller called "RepliesController" to make it possible to send a ajax request
 
-Thirty-eight Lesson: A New Reply Component
+Thirty-eighth Lesson: A New Reply Component
 
         1. Update view called "threads.show" to paginate the replies.
         2. Update vue component called "NewReply.vue" to get rid of the endpoint.
@@ -492,5 +492,14 @@ Forty-seventh Lesson: Notification Fakes in a Nutshell
         1. Create test at Unit Test called "ThreadTest.php"
             a. a_thread_notifies_all_registered_subscribers_when_a_reply_is_added
 
-* How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
+Forty-eighth Lesson: This Thread Has Been Updated Since You Last Read It
+ 
+        1. Update view called "thread.index" to show threads were recently updated
+        2. Update model called "Thread.php" to add the method "hasUpdatesFor()"
+        3. Create test at Unit Test called "ThreadTest.php"
+            a. a_thread_can_check_if_the_authenticated_user_has_read_all_replies
+        4. Update model called "User.php" to add methods "visitedThreadCacheKey()" and "read()"
+        5. Update controller called "ThreadsController.php" to show the threads that were not read
 
+* How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
+* How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git
