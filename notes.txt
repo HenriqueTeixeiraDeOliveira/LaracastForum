@@ -493,13 +493,22 @@ Forty-seventh Lesson: Notification Fakes in a Nutshell
             a. a_thread_notifies_all_registered_subscribers_when_a_reply_is_added
 
 Forty-eighth Lesson: This Thread Has Been Updated Since You Last Read It
- 
+
         1. Update view called "thread.index" to show threads were recently updated
         2. Update model called "Thread.php" to add the method "hasUpdatesFor()"
         3. Create test at Unit Test called "ThreadTest.php"
             a. a_thread_can_check_if_the_authenticated_user_has_read_all_replies
         4. Update model called "User.php" to add methods "visitedThreadCacheKey()" and "read()"
         5. Update controller called "ThreadsController.php" to show the threads that were not read
+
+Forty-nine Lesson: Spam Detection
+
+        1. Create test at Feature Test called "ParticipateInThreadsTest.php"
+            a. replies_that_contain_spam_may_not_be_created
+        2. Update controller called "RepliesController.php" to detect replies
+        3. Create test at new Unit Test called "SpamTest.php"
+            a. it_validates_spam
+        4. Create class called Spam to detect spams
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 * How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git
