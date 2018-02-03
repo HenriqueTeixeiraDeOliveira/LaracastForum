@@ -510,5 +510,16 @@ Forty-nine Lesson: Spam Detection
             a. it_validates_spam
         4. Create class called Spam to detect spams
 
+Fiftieth Lesson: Graduating Inspection Methods to Classes
+
+        1. Create and renamed tests at new Unit Test called "SpamTest.php"
+            a. it_checks_for_any_key_being_held_down
+            b. Renamed: it_validates_spam -> it_checks_for_invalid_keywords
+        2. Update class called "Spam.php" to detect all the different kinds of spam
+        3. Move class called "Spam.php" from app to inspections folder
+        4. Create class called "InvalidKeywords.php" to detect if the user is typing a invalid word
+        5. Create class called "KeyHeldDown.php" to detect if the user is held donw key
+        6. Update controller called "RepliesController.php" to update namespace
+
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 * How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git
