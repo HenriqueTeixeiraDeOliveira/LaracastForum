@@ -526,5 +526,14 @@ Fifty-first Lesson: Spam Detection At All Ports
         1. Update controller called "RepliesController.php" to protect store and update methods from spams
         2. Update controller called "ThreadsController.php" to protect store method from spams
 
+Fifty-second Lesson: Handling Server Exceptions with JavaScript
+
+        1. Update controller called "RepliesController.php" to catch exceptions from store and update methods
+        2. Update javascript file called "bootstrap.js" to be able to display flash messages with a danger status
+        3. Update vue component called "Flash.vue" to display flash messages according to its levels
+        4. Update vue component called "NewReply.vue" to flash errors related to the post method
+        5. Update vue component called "Reply.vu" to flash errors related to the update method
+        6. Update package.json to update laravel mix to the latest version.
+
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 * How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git
