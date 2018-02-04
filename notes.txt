@@ -521,5 +521,10 @@ Fiftieth Lesson: Graduating Inspection Methods to Classes
         5. Create class called "KeyHeldDown.php" to detect if the user is held donw key
         6. Update controller called "RepliesController.php" to update namespace
 
+Fifty-first Lesson: Spam Detection At All Ports
+
+        1. Update controller called "RepliesController.php" to protect store and update methods from spams
+        2. Update controller called "ThreadsController.php" to protect store method from spams
+
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 * How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git
