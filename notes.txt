@@ -542,5 +542,18 @@ Fifty-third Lesson: Refactoring to Custom Validation
         3. Update controller called "RepliesController" to delete validateReply method and add new spam rule at store and update methods"
         4. Update controller called "ThreadsController" to add new spam rule at store method.
 
+Fifty-forth Lesson: A User May Not Reply More Than Once Per Minute
+
+        1. Create test at Feature Test called "ParticipateInThreadsTest.php"
+            a. users_may_only_reply_a_maximum_of_once_per_minute
+        2. Create test at new Unit Test called "UserTest.php"
+            a. a_user_can_fetch_their_most_recent_reply
+        3. Create test at Unit Test called "ReplyTest.php"
+            a. it_knows_if_it_was_just_published
+        4. Update controller called "RepliesController.php" to do not allow the user to post more than once per minute
+        5. Update policy called "ReplyPolicy" to check if the user has a previous reply and check if it was just published
+        6. Update model called "Reply.php" to add a method to sse if the reply was just published
+        7. Update model called "User.php" to a method to fetch the last reply
+
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 * How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git
