@@ -518,7 +518,7 @@ Fiftieth Lesson: Graduating Inspection Methods to Classes
         2. Update class called "Spam.php" to detect all the different kinds of spam
         3. Move class called "Spam.php" from app to inspections folder
         4. Create class called "InvalidKeywords.php" to detect if the user is typing a invalid word
-        5. Create class called "KeyHeldDown.php" to detect if the user is held donw key
+        5. Create class called "KeyHeldDown.php" to detect if the user is held key down
         6. Update controller called "RepliesController.php" to update namespace
 
 Fifty-first Lesson: Spam Detection At All Ports
@@ -534,6 +534,13 @@ Fifty-second Lesson: Handling Server Exceptions with JavaScript
         4. Update vue component called "NewReply.vue" to flash errors related to the post method
         5. Update vue component called "Reply.vu" to flash errors related to the update method
         6. Update package.json to update laravel mix to the latest version.
+
+Fifty-third Lesson: Refactoring to Custom Validation
+
+        1. Create rule called "SpamFree" to detect spams
+        2. Update file called "AppServiceProvider.php" to be able to use SpamFree Rule
+        3. Update controller called "RepliesController" to delete validateReply method and add new spam rule at store and update methods"
+        4. Update controller called "ThreadsController" to add new spam rule at store method.
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 * How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git
