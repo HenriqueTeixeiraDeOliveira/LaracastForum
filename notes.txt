@@ -564,10 +564,22 @@ Fifty-fifth Lesson: Refactoring to Form Requests
 
 Fifty-sixth Lesson: Mentioned Users Notifications: Part 1
 
-        1. Create tests at the new Feature Test called "MentionUsersTest.php"
+        1. Create test at the new Feature Test called "MentionUsersTest.php"
             a. mentioned_users_in_a_reply_are_notified
         2. Update Controller called "RepliesController.php" to be able to notify the user when he/she is mentioned
         3. Create notification called "YouWereMentioned.php" to create the custom notification
+
+Fifty-seventh Lesson: Mentioned Users Notifications: Part 2
+
+        1. Update model called "Thread.php" to fire the event at addReply method and delete notifySubscribers()
+        2. Update file called "EventServiceProvider.php" to generate the events (php artisan event:generate)
+        3. Create Event called "ThreadReceivedNewReply,php" to fire the event after someone add a reply
+        4. Create Listener called "NotifyMentionedUsers.php" to notify when a user is mentioned after someone leave a reply
+        5. Create Listener called "NotifySubscribers.php" to notify users that are subscribed to a thread that someone left a reply
+        6. Update model called "Reply.php" to add mentionedUsers() method
+        7. Update controller called "RepliesController.php" to clean the controller and delegate the action of notifying mentioned users.
+        1. Create test at Unit Test called "ReplyTest.php"
+            a. it_can_detect_all_mentioned_users_in_the_body
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 * How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git
