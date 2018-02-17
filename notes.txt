@@ -562,6 +562,12 @@ Fifty-fifth Lesson: Refactoring to Form Requests
         3. Update ExceptionHandler called "Handler" to validate the requests
         4. Update feature test called "ParticipateInThreadsTest" to be able to verify if the validations rules are working properly
 
+Fifty-sixth Lesson: Mentioned Users Notifications: Part 1
+
+        1. Create tests at the new Feature Test called "MentionUsersTest.php"
+            a. mentioned_users_in_a_reply_are_notified
+        2. Update Controller called "RepliesController.php" to be able to notify the user when he/she is mentioned
+        3. Create notification called "YouWereMentioned.php" to create the custom notification
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 * How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git
