@@ -555,5 +555,13 @@ Fifty-forth Lesson: A User May Not Reply More Than Once Per Minute
         6. Update model called "Reply.php" to add a method to sse if the reply was just published
         7. Update model called "User.php" to a method to fetch the last reply
 
+Fifty-fifth Lesson: Refactoring to Form Requests
+
+        1. Create request called "CreatePostForm"
+        2. Update controller called "RepliesController.php" to delete some commands and be able to refactoring the method
+        3. Update ExceptionHandler called "Handler" to validate the requests
+        4. Update feature test called "ParticipateInThreadsTest" to be able to verify if the validations rules are working properly
+
+
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 * How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git
