@@ -578,8 +578,15 @@ Fifty-seventh Lesson: Mentioned Users Notifications: Part 2
         5. Create Listener called "NotifySubscribers.php" to notify users that are subscribed to a thread that someone left a reply
         6. Update model called "Reply.php" to add mentionedUsers() method
         7. Update controller called "RepliesController.php" to clean the controller and delegate the action of notifying mentioned users.
-        1. Create test at Unit Test called "ReplyTest.php"
+        8. Create test at Unit Test called "ReplyTest.php"
             a. it_can_detect_all_mentioned_users_in_the_body
+
+Fifty-eighth Lesson: Don't Forget to Scan Your Files
+
+        1. Update controller called "RepliesController.php" to do some refactoring at update method
+        2. Update component called "Reply.vue" to fix an issue related to the form
+        3. Update listener called "NotifyMentionedUsers.php" to do some refactoring
+        4.
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 * How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git
