@@ -586,7 +586,15 @@ Fifty-eighth Lesson: Don't Forget to Scan Your Files
         1. Update controller called "RepliesController.php" to do some refactoring at update method
         2. Update component called "Reply.vue" to fix an issue related to the form
         3. Update listener called "NotifyMentionedUsers.php" to do some refactoring
-        4.
+
+Fifty-nine Lesson: Wrap Usernames Within Anchor Tags
+
+        1. Create test at the Unit Test called "ReplyTest.php"
+            a. it_wraps_mentioned_usernames_in_the_body_within_anchor_tags
+        2. Update test at the Unit Test called "ReplyTest.php"
+            a. it_can_detect_all_mentioned_users_in_the_body
+        3. Update model called "Reply.php" to wrap mentioned users in the body within anchor tags.
+        4. Update component called "Reply.vue" to make sure the html is not displayed in the comment.
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 * How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git
