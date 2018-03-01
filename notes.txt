@@ -596,5 +596,18 @@ Fifty-nine Lesson: Wrap Usernames Within Anchor Tags
         3. Update model called "Reply.php" to wrap mentioned users in the body within anchor tags.
         4. Update component called "Reply.vue" to make sure the html is not displayed in the comment.
 
+Sixty Lesson: Instant Username Autocompletion 1 and 2
+
+        1. Install dependencies at "package.json" file
+        2. Update component called "NewReply.vue" to import the packages and add the user's name at the reply
+        3. Update view called "app.blade.php" to yield code from others views
+        4. Update view called "show.blade.php" to add the atwho stylesheet
+        5. Create test at the Feature Test called "MentionUsersTest.php"
+            a. it_can_fetch_all_mentioned_users_starting_with_the_given_characters
+        6. Create controller called "UsersController" to be able to search the users
+        7. Update file called "web.php" to add the index method at the UsersController
+        8. Create css file called "jquery.atwho.css" to add the atwho package stylesheet
+
+
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 * How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git

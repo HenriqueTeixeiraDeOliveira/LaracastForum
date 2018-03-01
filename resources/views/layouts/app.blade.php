@@ -30,6 +30,8 @@
 
     </style>
 
+    @yield('head')
+
 </head>
 
 <body>
@@ -45,5 +47,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>
